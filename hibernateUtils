@@ -1,0 +1,47 @@
+package striner.hibernateUtils;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class HibernateUtils {
+	
+	private static SessionFactory sf;
+	static{
+		//1 加载配置
+		Configuration conf = new Configuration().configure();
+		//2 根据Configuration配置信息创建SessionFactory
+		sf = conf.buildSessionFactory();
+		
+		// 要求: 虚拟机关闭时释放资源
+		Runtime.getRuntime().addShutdownHook(new Thread(new Runnable(){
+
+			@Override
+			public void run() {
+
+				System.out.println("虚拟机关闭! 释放资源");
+				sf.close();
+			}
+			
+		}));
+	}
+	
+	/**
+	 * 获得一个全新的Session对象
+	 * @return
+	 */
+	public static org.hibernate.Session openSession() {
+		
+		//3 获得session
+		return sf.openSession();   
+	}
+	
+	/**
+	 * 获得当前已有的Session对象
+	 * @return
+	 */
+	public static org.hibernate.Session getCurrentSession() {
+		
+		//获得session
+		return sf.getCurrentSession();
+	}
+}

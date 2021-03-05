@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:cxf="http://cxf.apache.org/core"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+				            http://www.springframework.org/schema/beans/spring-beans.xsd
+				            http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+				            http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+				            http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
+				            
+	<!-- <jaxws:server发布服务 -->			            
+	<jaxws:server address="/mobile" serviceClass="cn.striner.mobile.server.MobileInterface">
+		<jaxws:serviceBean>
+			<ref bean="mobileServer"/>
+		</jaxws:serviceBean>
+	</jaxws:server>			            
+	<!-- 配置服务实现类 -->	
+	<bean name="mobileServer" class="cn.striner.mobile.server.MobileInterfaceImpl">
+		<property name="mobileClient" ref="mobileClient"></property>
+	</bean>		            
+	<!-- 配置公网客户端 -->
+	<jaxws:client id="mobileClient" address="http://ws.webxml.com.cn/WebServices/MobileCodeWS.asmx" 
+					serviceClass="cn.striner.mobile.server.client.MobileCodeWSSoap"></jaxws:client>			            
+				            
+</beans>

@@ -1,0 +1,39 @@
+// 方法一
+import java.util.Scanner;
+
+public class Main {
+
+	private static int hexValue;
+	public static void main(String[] args){
+    	      Scanner input=new Scanner(System.in);
+    	      int decimal=input.nextInt();
+    	      String hex="";
+    	      if(decimal == 0) {
+    	    	  System.out.print("0");
+    	      }
+    	      while(decimal > 0 ){
+    	    	  hexValue = decimal%16;
+    	    	  char hexDigit=((hexValue<=9)&&(hexValue>=0))?(char)(hexValue+'0'):(char)(hexValue-10+'A');
+    	    	  hex=hexDigit+hex;
+    	    	  decimal=decimal/16;
+    	      }
+    	      System.out.println(hex);
+       }
+}
+
+
+// 方法二
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int in = input.nextInt();
+		System.out.println(Integer.toHexString(in).toUpperCase());
+		input.close();
+	}
+}
+
+
+

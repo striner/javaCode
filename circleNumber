@@ -1,0 +1,23 @@
+public class Main {
+
+	public static void main(String[] args) {
+
+		for (int i = 1000; i <= 9999; i++) {
+			if (isCircleNumber(i)) {
+				System.out.println(i);
+			}
+		}
+	}
+	
+	public static boolean isCircleNumber(int i) {
+		
+		int m = 0, t = 0;
+		for (m = i; m > 0; m/=10) {
+			t = t*10 + m%10;
+		}
+		if (t == i) {
+			return true;
+		}
+		return false;
+	}
+}

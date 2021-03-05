@@ -1,0 +1,55 @@
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		String[] ss = input.nextLine().trim().split(" +");
+		int n = Integer.parseInt(ss[0]);  //数组的第一部分为迷宫的长
+		int m = Integer.parseInt(ss[1]);  //数组的第二部分为迷宫的宽
+		
+		char[][] data = new char[n][];
+		for (int i = 0; i < n; i++) {
+			data[i] = input.nextLine().trim().toCharArray();   //正文部分为迷宫的内部构造
+		}
+		
+		Set<String> set = new HashSet<>();   //set用来保存走的路径
+		set.add("0,0");  //将迷宫的左上角(0, 0)设为起点, 右下角设为终点
+		System.out.println(fun(data, set, n-1 + "," +(m -1)));
+	}
+
+	public static int fun(char[][] data, Set<String> from, String goal) {
+		if (from.contains(goal)) return 0;    //起点与终点重合,需要0步完成
+		Set<String> set = new HashSet<>();     //from相邻的未访问的点
+		
+		for (Object obj : from) {
+			String[] ss = ((String) obj).split(",");
+			int y = Integer.parseInt(ss[0]);
+			int x = Integer.parseInt(ss[1]);
+			
+			if (y > 0 && data[y - 1][x] == '.') {
+				data[y - 1][x] = '*';
+				set.add(y - 1 + "," + x);
+			}
+			if (y < data.length - 1 && data[y + 1][x] == '.') {
+				data[y + 1][x] = '*';
+				set.add(y + 1 + "," + x);
+			}
+			if (y > 0 && data[y][x - 1] == '.') {
+				data[y][x - 1] = '*';
+				set.add(y + "," + (x - 1));
+			}
+			if (y < data.length - 1 && data[y][x + 1] == '.') {
+				data[y][x + 1] = '*';
+				set.add(y + "," + (x + 1));
+			}
+		}
+			
+		if (set.isEmpty()) return -1;
+		int r = fun(data, set, goal);    //分层遍历 广度优先遍历
+		if (r < 0) return -1;   //找不到出口 返回-1
+		return r + 1;
+	}
+}

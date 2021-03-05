@@ -1,0 +1,19 @@
+public class NumberOfTail {     //求1000!尾部所包含0的个数
+
+	public static void main(String[] args) {
+		System.out.println("the number of tail of 1000! is: " + zeroNumberOfTail());
+	}
+	public static int zeroNumberOfTail() {
+		String str = NumberOfAll.number().toString();    //1000!
+		int count = 0;
+		StringBuilder sbu = new StringBuilder(str);     
+		str = sbu.reverse().toString();     // reverse()  == >  StringBuilder翻转
+		for(int i = 0; i < 1000; i++) {
+			if('0' != str.charAt(i)) {
+				break;
+			}
+			count++;
+		}
+		return count;
+	}
+}

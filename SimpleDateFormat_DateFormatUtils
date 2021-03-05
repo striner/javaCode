@@ -1,0 +1,25 @@
+import org.apache.commons.lang3.time.DateFormatUtils;
+import java.util.Date;
+import java.util.Random;
+ 
+/**
+ * 获取后缀名工具类
+ * create by mulin on 2019.09.02
+ */
+public class SuffixNameUtil {
+ 
+    private static final String DATE_FORMAT = "_yyyyMMdd_HHmmss";
+ 
+    /**
+     * 获取后缀名
+     * @return _年月日_时分秒_一位随机数
+     */
+    public static String getSuffixName() {
+        String format = DateFormatUtils.format(new Date(), DATE_FORMAT);
+ 
+        Random random = new Random();
+        int ends = random.nextInt(10);
+ 
+        return format + "_" + ends;
+    }
+}

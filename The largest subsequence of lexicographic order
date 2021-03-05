@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		//求字典序最大的子序列,从后往前找,后面的总是小于等于前面的才能保证字典序最大,最后一个字母肯定会被取到
+		Scanner input = new Scanner(System.in);
+		String s = input.nextLine();
+		char max = 'a';
+		StringBuffer sb = new StringBuffer();
+		for (int i = s.length() - 1; i >= 0; i--) {
+			if (s.charAt(i) >= max) {
+				max = s.charAt(i);
+				sb.append(max);
+			}
+		}
+		String ans = sb.reverse().toString();
+		System.out.println(ans);
+		input.close();
+	}
+}

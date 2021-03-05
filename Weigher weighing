@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+//天平称重
+//砝码均为3的倍数 要求输出重量从1到n的所有物品的称重方式
+// 1  1
+// 2  3-1
+// 3  3
+// 4  3+1
+// 5  9-3-1
+// ... ...
+public class Main {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int w = input.nextInt();    //所称物体的重量
+		
+		for (int i = 1; i <= w; i++) {   //i为所需称重的物品重量
+			System.out.println(i + ": " + fun(i));
+		}
+		input.close();
+	}
+
+	public static String fun(int w) {
+
+		int i = 1;
+		while(i < w) i *= 3;
+		
+		if (w == i) return i + "";
+		
+		if (w <= i/2) return i/3 + "+" + fun(w - i/3);
+		
+		return i + "-" + reve(fun(i - w));
+	}
+
+	private static String reve(String str) {
+		str = str.replace("+", "#");
+		str = str.replace("-", "+");
+		str = str.replace("#", "-");
+		
+		return str;
+	}
+}

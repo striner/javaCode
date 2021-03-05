@@ -1,0 +1,50 @@
+TreeSet集合属于Set集合的子类, 具有:无序(存,取顺序不一致),无索引,不可重复存储的特点
+
+
+要求:
+ 从键盘接收一个字符串,程序对其中所有的字符进行排序并输出.
+ 
+分析:
+ 1.键盘录入字符串
+ 2.将字符串转换为字符数组   字符数组内含compareTo()方法
+ 3.定义TreeSet集合,传入比较器对字符排序并保留重复
+ 4.遍历字符数组,将每一个字符存储在TreeSet集合中
+ 5.遍历TreeSet集合,打印每一个字符
+
+代码如下:
+
+    import java.util.Comparator;  
+    import java.util.Scanner;  
+    import java.util.TreeSet;  
+      
+    public class Sort {  
+      
+          
+        public static void main(String[] args) {  
+            Scanner sc = new Scanner(System.in);  
+            System.out.println("please input a String:");  
+            String line = sc.nextLine();  
+            char[] c = line.toCharArray();  
+              
+            TreeSet<Character> ts = new TreeSet<>(new Comparator<Character> () {  
+                  
+                @Override  
+                public int compare(Character c1, Character c2) {  
+                    //int num = c1 - c2;           //自动拆箱  
+                    int num = c1.compareTo(c2);  
+                    return num == 0 ? 1 : num;  
+                }  
+            });  
+              
+            for (char ch : c) {  
+                ts.add(ch);                 //自动装箱  
+            }  
+              
+            for (Character character : ts) {  
+                System.out.print(character);  
+            }  
+              
+            sc.close();  
+        }  
+      
+    }  

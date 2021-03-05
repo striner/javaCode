@@ -1,0 +1,24 @@
+//动态规划解决取球问题(纯递归太慢)
+//使用缓存 Map或者数组
+public class Main {
+	static Map<Integer, Boolean> map = new HashMap<>();
+	public static void main(String[] args) {
+		map.put(0, true);
+		System.out.println(fun(1000));
+	}
+
+  //n个球,赢则true,输则false
+	public static boolean fun(int n) {
+		
+		if (map.get(n) != null) return map.get(n);
+		
+		Boolean b = false;
+		if (n > 1 && fun(n - 1) == false) b = true;
+		if (n > 3 && fun(n - 3) == false) b = true;
+		if (n > 7 && fun(n - 7) == false) b = true;
+		if (n > 8 && fun(n - 8) == false) b = true;
+		
+		map.put(n, b);
+		return b;
+	}
+}

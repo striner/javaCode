@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		String str = input.nextLine();
+		
+		long out = tran(str);
+		System.out.println(out);
+		
+		input.close();
+	}
+
+	public static long tran(String str) {
+		int len = str.length();
+		int[] a = new int[len];
+		long[] dec = new long[len];
+		long[] num = new long[len];
+		int k = 0;
+		dec[0] = 0;
+ 		for (int i = len - 1; i >= 0; i--) {
+			a[i] = str.charAt(i);
+			
+			switch (a[i]) {
+			case 'A':
+				a[i] = 10;
+				break;
+			case 'B':
+				a[i] = 11;
+				break;	
+			case 'C':
+				a[i] = 12;
+				break;
+			case 'D':
+				a[i] = 13;
+				break;
+			case 'E':
+				a[i] = 14;
+				break;
+			case 'F':
+				a[i] = 15;
+				break;
+			default:
+				a[i] = a[i] - '0';
+			}
+			
+			if (len - 1 == i) {
+				num[k] = 1;
+				dec[k] = a[i] * num[k];
+			} else {
+				num[k] = num[k - 1] * 16; 
+				dec[k] = a[i] * num[k] + dec[k - 1];
+			}
+			
+			k++;
+		}
+		return dec[k - 1];
+	}
+
+}

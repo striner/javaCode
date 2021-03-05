@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.striner.spring_boot_mybatis.mapper.ReplyMapper">
+    <select id="getReplyByrid" resultType="com.striner.spring_boot_mybatis.bean.Reply">
+       select * from reply where tid = #{rid}
+    </select>
+
+    <select id="insertReply">
+        INSERT INTO topic(replyContent,ipAddr) values (#{replyContent},#{ipAddr})
+    </select>
+</mapper>

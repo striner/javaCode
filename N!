@@ -1,0 +1,15 @@
+import java.math.BigInteger;  
+import java.util.Scanner; 
+public class Main {    
+      
+    public static void main(String[] args) {  
+        Scanner input = new Scanner(System.in);
+    	int N = input.nextInt();
+        BigInteger sum = new BigInteger("1");   //BigInteger("String val")  
+        for(int i = 1; i <= N; i++) {  
+            BigInteger bi = new BigInteger(i + "");  
+            sum = sum.multiply(bi);  
+        }  
+        System.out.println(sum);  
+    }  
+}

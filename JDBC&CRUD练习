@@ -1,0 +1,275 @@
+//我今日闲来无事,把前一周学的jdbc和数据的增删改查(CRUD)练习了一遍.
+
+//代码分为dbinfo.properties(数据库的连接配置), Student.java(javaBean 用于封装对象), DBUtil.java(工具类), TestCRUD.java(测试类)四部分,下面我将一一将以罗列.
+
+
+
+/*---------------------- dbinfo.properties ---------------------*/
+
+driverClass=com.mysql.jdbc.Driver
+url=jdbc:mysql:///test
+name=root
+password=mulin123456
+
+//其中driverClass值为数据库的连接驱动,url值为需要连接的库路径,jdbc:mysql:///test == jdbc:mysql://localhost:3306/test   "///"为本地连接的缩写
+
+
+
+/*----------------------- Student.java -------------------------*/
+
+package login.dao;
+
+import java.util.Date;
+
+public class Student {
+
+	private int id;
+	private String name;
+	private String sex;
+	private Date birthday;
+	
+	public Date getBirthday() {
+		return birthday;
+	}
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	@Override
+	public String toString() {
+		return "id=" + id + ", name=" + name + ", sex=" + sex + ", birthday=" + birthday;
+	}
+}
+
+
+
+
+/*------------------------- 工具类DBUtil.java -----------------------*/
+//DBUtil.java里主要封装的是jdbc,将数据库的连接以及关闭方法封装起来,以便测试类的调用.
+package database.util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ResourceBundle;
+
+public class DBUtil {
+
+	private static String driverClass;
+	private static String url;
+	private static String name;
+	private static String password;
+	
+	static {
+		//此对象用于加载properties文件数据
+		ResourceBundle rb = ResourceBundle.getBundle("dbinfo");
+		driverClass = rb.getString("driverClass");
+		url = rb.getString("url");
+		name = rb.getString("name");
+		password = rb.getString("password");
+		
+		try {
+			Class.forName(driverClass);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	/*得到连接的方法*/
+	public static Connection getConnection() throws Exception {
+		return DriverManager.getConnection(url, name, password);
+	}
+	
+	/*关闭资源的方法*/
+	public static void closeAll(ResultSet rs, Connection conn, Statement stmt) {
+		if (rs != null) {
+			try {
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			rs = null;    // 方便gc回收
+		}
+			
+		if (stmt != null) {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			stmt = null;
+		}
+
+		if (conn != null) {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			conn = null;
+		}
+	}
+}
+
+
+
+
+/* -----------------------测试类TestCRUD.java--------------------------- */
+
+package jdbcTest;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Test;
+
+import database.util.DBUtil;
+import login.dao.Student;
+
+public class TestCRUD {
+	
+	@Test	
+	public void testSelect() {     // 数据查找
+		
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			String sql = "SELECT * FROM student";
+			stmt = conn.prepareStatement(sql);    // 预编译
+			//执行sql语句,并返回结果 
+			rs = stmt.executeQuery();
+			List<Student> list = new ArrayList<> ();
+			
+			/* 加载驱动 
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection("jdbc:mysql:///test", "root", "mulin123456");    // /// 表本地连接
+			stmt = conn.createStatement();*/
+			
+			while (rs.next()) {
+				Student student = new Student();
+				student.setId(rs.getInt(1));    // "id"
+				student.setName(rs.getString("name"));
+				student.setSex(rs.getString("sex"));
+				student.setBirthday(rs.getDate(4));
+				
+				list.add(student);
+				
+			}
+			
+			for (Student l : list) {
+				System.out.println(l);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {   
+			
+			DBUtil.closeAll(rs, conn, stmt);
+		}
+	}
+
+
+@Test	
+	public void testInsert() {     // 数据增添
+		
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			stmt = conn.prepareStatement("INSERT INTO student VALUES(?,?,?,?)");   // 预编译
+			stmt.setInt(1, 5);     // 1表示第一个问号“？”
+			stmt.setString(2, "striner");
+			stmt.setString(3, "女");
+			stmt.setString(4, "1997-02-18");
+			
+			int i = stmt.executeUpdate();
+			
+			if (i > 0) {
+				System.out.println("INSERT SUCCESS!");
+			} 
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.closeAll(null, conn, stmt);
+		}
+	}
+
+
+	@Test	
+	public void testUpdate() {     // 数据修改
+		
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			stmt = conn.prepareStatement("UPDATE student SET name=?,sex=?,birthday=? WHERE id=?");   // 预编译
+			stmt.setString(1, "xyz");
+			stmt.setString(2, "女");
+			stmt.setString(3, "2017-1-8");
+			stmt.setInt(4, 1);
+			
+			int i = stmt.executeUpdate();
+			
+			if (i > 0) {       // i > 0 表执行成功
+				System.out.println("UPDATE SUCCESS!");
+			} 
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.closeAll(null, conn, stmt);
+		}
+	}
+
+
+
+	@Test	
+	public void testDelect() {     // 数据删除
+		
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			stmt = conn.prepareStatement("DELETE FROM student WHERE id=?");   // 预编译
+			stmt.setInt(1, 5);
+			int i = stmt.executeUpdate();
+			
+			if (i > 0) {       // i > 0 表执行成功
+				System.out.println("DELETE SUCCESS!");
+			} 
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.closeAll(null, conn, stmt);
+		}
+	}
+}
+

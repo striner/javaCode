@@ -1,0 +1,48 @@
+//并查集  
+//合根植物
+//多少根生成树就多少根植物
+import java.util.Scanner;
+
+public class Main {
+	static int[] tb;   //整棵树 
+	static int num;   //合并数
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String[] ss = input.nextLine().trim().split(" +");   //根据一个或者多个空格分割
+		
+		int M = Integer.parseInt(ss[0]);
+		int N = Integer.parseInt(ss[1]);
+		
+		tb = new int[M*N + 1];  //整棵树 0不存
+		int k = Integer.parseInt(input.nextLine().trim());   //有k条连通数据
+		for (int i = 0; i < k; i++) {
+			ss = input.nextLine().trim().split(" +");
+			
+			//ss[0] ss[1]  表示ss[0]和ss[1]连
+			fun(Integer.parseInt(ss[0]), Integer.parseInt(ss[1]));
+		}
+		
+			System.out.println(M*N - num);   //总数减掉有合并数便为合根植物的根数
+	}
+	
+	//a与b连通
+	public static void fun(int a, int b) {
+
+		int ra = find(a);   //查询a的父节点 用祖先的号代表整个家族
+		int rb = find(b);
+		
+		if (ra == rb) return;   //若两树的根节点相同则表示本身就为一颗合并数
+		
+		union(ra, rb);  //合并ra,rb
+		num++;
+	}
+	public static void union(int ra, int rb) {
+
+		tb[ra] = rb;
+	}
+	public static int find(int x) {   //查找其父节点
+
+		if(tb[x] == 0) return x;
+		return tb[x] = find(tb[x]);  //并查集
+	}
+}

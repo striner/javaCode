@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+ 		for (int i = 1; i <= 50; i++) {    //i为球的总数
+			System.out.println(i + ": " + fun(i));   //true为我方必赢 false为必输
+		}
+	}
+
+	public static boolean fun(int n) {    //n为局面所剩的球数
+		if (n == 0) return true;
+		
+		if (n > 1 && fun(n - 1) == false) return true;
+		if (n > 3 && fun(n - 3) == false) return true;
+		if (n > 7 && fun(n - 7) == false) return true;
+		if (n > 8 && fun(n - 8) == false) return true;
+		return false;
+	}
+} 

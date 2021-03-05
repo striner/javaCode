@@ -1,0 +1,7 @@
+org.springframework.context.ApplicationContextInitializer=\
+  com.striner.spring_boot.listener.MyApplicationContextInitializer
+
+org.springframework.boot.SpringApplicationRunListener=\
+  com.striner.spring_boot.listener.MySpringApplicationRunListener
+
+### "\"代表换行,","用来分割

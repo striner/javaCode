@@ -1,0 +1,80 @@
+谈到加密解密,大家最先想到的是不是可望而又不可及的加密解密算法? 哈哈,这里我给大家安利一个简单而又效果显著的加密解密方法,大家竖起耳朵好好听哦~
+
+来来来,先放代码~
+
+加密代码:
+
+package smartCrypho;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class PictureEncryption {   //图片加密
+	public static void main(String[] args) throws IOException {
+		BufferedInputStream bis = new BufferedInputStream(new FileInputStream("photo.jpg"));
+		BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("copy.jpg"));
+		
+		int b;
+		while ((b = bis.read()) != -1) {
+			bos.write(b ^ 123);
+		}
+		
+		bis.close();
+		bos.close();
+	}
+
+}
+
+
+解密代码:
+
+package smartCrypho;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class PictureDecryption {    //图片解密
+	
+	public static void main(String[] args) throws IOException {
+		BufferedInputStream bis = new BufferedInputStream(new FileInputStream("copy.jpg"));
+		BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("copy1.jpg"));
+		
+		int b;
+		while ((b = bis.read()) != -1) {
+			bos.write(b ^ 123);
+		}
+		
+		bis.close();
+		bos.close();
+	}
+
+}
+
+哈哈,看过了代码后大家是不是发现加密的秘诀所在了? 加解密的方法着实很多,这里我用的是简单的异或方法来实现的.
+在程序中数字123就相当于密钥(当然密钥的值大家可以随便设定),对密钥进行两次异或就能得到原来的数据了~
+
+
+这里再给大家讲讲异或吧.
+
+别的不说,给大家先举个栗子大家应该就能明白了,
+假设二进制 0101 为源数据, 1011 为密钥,  第一次异或:0101^1011 = 1110 与源数据不同,图片乱码 --> 加密
+第二次异或: 1110^1011 = 0101 和源数据一样哦,这就达到了解密的效果,是不是可神奇了?
+那么肯定有人就发现了,如果密钥和源数据一样,自己异或自己不就永远为0了?  哈哈,别急,听我继续往下说~
+
+通过异或来实现的加解密有一个明显的bug,那就是如果原图片读取的二进制数据恰好和自己所定的密钥值刚好相等的话,无论怎么和密钥异或值都为0,不过你完全不用担心,
+电脑上数据都是以0和1组成的二进制代码组成的,而图片的二进制值肯定也是一长串串的二进制代码,而你的密钥转换成二进制也不过短短的一小串而已,相同的概率可谓是小之又小~
+
+不过话又说回来了,我这只是最简单的加解密方法,只适合个人对java IO流的练习,如果想把异或加解密用在项目中的话....那你还是好好学学加密解密算法吧,
+毕竟异或这种方式安全系数可并不高~
+
+好了,就给大家讲解到这里了,效果图的话我随后再给大家补上~ 谢谢大家的阅读
+
+最后再附上相关博客的链接,带效果图的哦~
+http://blog.csdn.net/striner/article/details/78471640
+

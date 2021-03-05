@@ -1,0 +1,68 @@
+java集合框架的练习之TreeSet集合与ArrayList集合的混合使用
+
+
+要求:
+
+在一个集合中存储无序并且重复的字符串,定义一个方法,使得该集合中的字符串保留重复并排序输出
+
+
+ 分析:
+
+1.用List集合接收存储重复的无序字符串.
+
+ 2.定义一个方法,排序并保留重复:
+     a.创建TreeSet集合对象,因为String本身就具备比较功能,但是重复不会保留,所以我们用比较器
+     b.将list中所有的元素添加到TreeSet集合中,对其排序,保留重复
+     c.清空list集合
+     d.将TreeSet集合中排好序的元素添加到list中
+
+3.把排好序的List集合中的数据打印输出.
+
+
+代码:
+
+    import java.util.Comparator;  
+    import java.util.List;  
+    import java.util.Scanner;  
+    import java.util.TreeSet;  
+      
+    public class SortAndSaveTheSameData {   //排序并保留重复   
+      
+        public static void main(String[] args) {  
+      
+            ArrayList<String> list = new ArrayList<>();       
+              
+           /* list.add("aad"); 
+            list.add("sss"); 
+            list.add("aad"); 
+            list.add("sdddddd");*/  
+            System.out.println("please input some string:");  
+            Scanner sc = new Scanner(System.in);  
+            while (sc.hasNext()) {   
+                list.add(sc.nextLine());      // ctrl + z  ==> 停止录入  
+            }  
+              
+            sort(list);  
+            System.out.println("after sort:");  
+            System.out.println(list);  
+              
+            sc.close();  
+        }  
+          
+        public static void sort(List<String> list) {  
+      
+            TreeSet<String> ts = new TreeSet<>(new Comparator<String>() {    //比较器  
+      
+                @Override  
+                public int compare(String s1, String s2) {  
+                    int num = s1.compareTo(s2);  
+                    return num == 0 ? 1 : num;  
+                }  
+            });  
+              
+            ts.addAll(list);    //将list集合中所有元素添加到TreeSet集合中对其排序  
+            list.clear();       //清空list集合  
+            list.addAll(ts);    //将TreeSet集合中排好序的元素添加到list集合中  
+        }  
+    }  
+    

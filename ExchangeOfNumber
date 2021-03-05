@@ -1,0 +1,59 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+/**
+ * 输入十个整数,最小的数与第一个数对换,最大的数与最后一个数对换
+ * @param args
+ */
+	public static void main(String[] args) {
+
+		/*输入十个数*/
+		Scanner input = new Scanner(System.in);
+		List<Integer> list = codeInput(input);
+		
+		/*进行处理*/
+		codeProcessing(list);
+		
+		/*输出十个数*/
+		codeOutput(input, list);
+	}
+
+	public static List<Integer> codeInput(Scanner input) {    // 输入十个数
+		List<Integer> list = new ArrayList<>();
+		for (int i = 0; i < 10; i++) {
+			list.add(input.nextInt());
+		}
+		return list;
+	}
+
+	public static void codeProcessing(List<Integer> list) {   // 进行处理
+		
+		int max = list.get(0);
+		int min = list.get(0);
+		for (int i = 1; i < 9; i++) {
+			max = max > list.get(i) ? max : list.get(i);
+			min = min < list.get(i) ? min : list.get(i);
+		}
+		int indexMax = list.indexOf(max);
+		int indexMin = list.indexOf(min);
+		
+		int temp = list.get(9);
+		list.set(9, max);
+		list.set(indexMax, temp);
+		
+		temp = list.get(0);
+		list.set(0, min);
+		list.set(indexMin, temp);
+	}
+
+	public static void codeOutput(Scanner input, List<Integer> list) {    // 输出十个数
+		
+		for (int i : list) {
+			System.out.print(i + " ");
+		}
+		
+		input.close();
+	}
+}

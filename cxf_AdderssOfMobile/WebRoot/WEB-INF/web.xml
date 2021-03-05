@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+							http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
+	id="WebApp_ID" version="3.1">
+	
+  <display-name>cxf_AdderssOfMobile</display-name>
+  
+  <!-- 设置spring的环境 -->
+  <context-param>
+  	<!-- contextConfigLoation是不能修改的 -->
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>classpath:applicationContext.xml</param-value>
+  </context-param>
+  <listener>
+  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+  <!-- 配置CXF的Servlet -->
+  <servlet>
+  	<servlet-name>CXF</servlet-name>
+  	<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CXF</servlet-name>
+  	<url-pattern>/ws/*</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 配置mobileServlet -->
+  <servlet>
+  	<servlet-name>mobileServlet</servlet-name>
+  	<servlet-class>cn.striner.mobile.server.servlet.MobileServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>mobileServlet</servlet-name>
+  	<url-pattern>*.action</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
+
+
+

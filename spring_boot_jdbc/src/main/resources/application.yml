@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    username: root
+    password: mulin123
+    url: jdbc:mysql:///crm
+    ###切换数据源
+    driver-class-name: com.mysql.jdbc.Driver
+
+    type: com.alibaba.druid.pool.DruidDataSource

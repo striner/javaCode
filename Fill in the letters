@@ -1,0 +1,52 @@
+//填字母游戏
+//最先拼出LOL的胜  *为空格
+//-1 输
+//0 平
+//1 赢
+public class Main {
+	public static void main(String[] args) {
+		System.out.println(game("***"));
+		System.out.println(game("L**L"));
+		System.out.println(game("L**L***L"));
+		System.out.println(game("L*****L"));
+	}
+
+	public static int game(String x) {   //x为当前局面
+		return fun(x.toCharArray());
+	}
+
+	public static int fun(char[] ch) {
+		String str = new String(ch);
+		if (str.contains("LOL")) return -1;   //已方局面已有LOL则输
+		if (str.contains("*") == false) return 0;   //没有空格且未胜则必为平局
+		boolean ping = false;
+		
+		for (int i = 0; i < ch.length; i++) {
+			
+			if (ch[i] == '*') {
+				try {
+					ch[i] = 'O';   //试着填入O
+					switch(fun(ch)) {
+					case -1:
+						return 1;
+					case 0:
+						ping = true;
+					}
+					ch[i] = 'L';   //试着填入L
+					switch(fun(ch)) {
+					case -1:
+						return 1;
+					case 0:
+						ping = true;
+					}
+				} 
+				finally {
+					ch[i] = '*';  //回溯
+				}
+			}
+		}
+		
+		if (ping) return 0;   //平局
+		return -1;   //输
+	}
+}

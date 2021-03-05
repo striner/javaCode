@@ -1,0 +1,53 @@
+import java.math.BigInteger;
+
+public class NumberOfAll {     //求1000!所包含的所有0的个数
+	/*public static int number() {
+		int sum = 1;
+		for (int i = 1; i <= 1000; i++) {
+			sum *= i;
+		}
+		return sum;
+	}
+	public static void main(String[] args) {
+		int sum = number();
+		System.out.println("1000! = " + sum);   //运行结果为0! 内存溢出!!!
+	}*/
+	
+	public static BigInteger number() {     //1000!
+		BigInteger sum = new BigInteger("1");   //BigInteger("String val")
+		for(int i = 1; i <= 1000; i++) {
+			BigInteger bi = new BigInteger(i + "");
+			sum = sum.multiply(bi);
+		}
+		return sum;
+	}
+	public static int numberOfZero() {
+		int count = 0;
+		String str = number().toString();
+		for(int i = 0; i < str.length(); i++) {
+			if ('0' == str.charAt(i)) {       //charAt(i)   =>  数组中下标为i的值转型为char
+				count++;
+			}
+		}
+		return count;              
+	}
+	public static void main(String[] args) {
+		System.out.println("the number of zero of 1000! is: " + numberOfZero());
+	}
+}
+	/*public static void main(String[] args) {
+		
+		BigInteger sum = new BigInteger("1");   //BigInteger("String val")
+		for(int i = 1; i <= 1000; i++) {
+			BigInteger bi = new BigInteger(i + "");
+			sum = sum.multiply(bi);
+		}
+		String str = sum.toString();
+		int count = 0;
+		for(int i = 0; i < str.length(); i++) {
+			if ('0' == str.charAt(i)) {       //charAt(i)   =>   数组中下标为i的值转型为char
+				count++;
+			}
+		}
+		System.out.println(count);
+	}*/

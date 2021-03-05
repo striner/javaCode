@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		int n = input.nextInt();
+		
+		int ao = (int) (n*0.1);
+		int bo = (int) (n*0.2);
+		int co = (int) (n*0.3);
+		int an = (int) Math.ceil(n*0.1);
+		int bn = (int) Math.ceil(n*0.2);
+		int cn = (int) Math.ceil(n*0.3);
+		int ac = an - ao;
+		int bc = bn - bo;
+		int cc = cn - co;
+		System.out.print(ac + " ");
+		System.out.print(bc + ac + " ");
+		System.out.print(cc + bc + ac);
+		input.close();
+	}
+}

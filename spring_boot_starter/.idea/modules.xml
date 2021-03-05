@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/striner-spring-boot-starter-autoconfigurer/striner-spring-boot-starter-autoconfigurer.iml" filepath="$PROJECT_DIR$/striner-spring-boot-starter-autoconfigurer/striner-spring-boot-starter-autoconfigurer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/striner_spring_boot_starter/striner_spring_boot_starter.iml" filepath="$PROJECT_DIR$/striner_spring_boot_starter/striner_spring_boot_starter.iml" />
+    </modules>
+  </component>
+</project>

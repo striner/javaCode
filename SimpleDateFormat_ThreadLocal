@@ -1,0 +1,47 @@
+ 
+import org.apache.commons.collections.MapUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+ 
+/**
+ * 获取后缀名工具类
+ * create by mulin on 2019.09.02
+ */
+public class SuffixNameUtil {
+ 
+    private static final Logger logger = LogManager.getLogger(DocAndDirManagerImpl.class);
+    private static final String DATE_FORMAT = "_yyyyMMdd_HHmmss";
+ 
+    private static ThreadLocal<Map<String, SimpleDateFormat>> threadLocal = new ThreadLocal<Map<String, SimpleDateFormat>>(){
+        protected synchronized HashMap<String, SimpleDateFormat> initialValue() {
+            logger.info("SimpleDateFormatThreadLocal initialValue -- ");
+            return new HashMap<>();
+        }
+    };
+ 
+    /**
+     * 获取后缀名
+     * @return _年月日_时分秒_一位随机数
+     */
+    public static String getSuffixName() {
+ 
+        Map<String, SimpleDateFormat> dateMap = threadLocal.get();
+        SimpleDateFormat sdf = dateMap.get(DATE_FORMAT);
+        if (MapUtils.isEmpty(dateMap)) {
+            logger.info("getSuffixName SimpleDateFormatThreadLocal initialValue -- ");
+            sdf = new SimpleDateFormat(DATE_FORMAT);
+            dateMap.put(DATE_FORMAT, sdf);
+            threadLocal.set(dateMap);
+        }
+ 
+        Random random = new Random();
+        int ends = random.nextInt(10);
+ 
+        return sdf.format(new Date()) + "_" + ends;
+    }
+}

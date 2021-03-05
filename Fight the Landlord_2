@@ -1,0 +1,98 @@
+package aboutCollection;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.TreeSet;
+
+public class Poker_Collections_shuffle_2 {
+/*
+ * 模拟斗地主洗牌和发牌,并对牌进行排序
+ * 
+ * 分析:
+ * 1.创建一副扑克的集合对象
+ * 2.洗牌
+ * 3.发牌
+ * 4.看牌
+ */
+	public static void main(String[] args) {
+		
+		/*创建一副扑克*/
+		String[] num = {"3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "1", "2"};
+		String[] color = {"黑桃", "红桃", "梅花", "方块"};
+		
+		/*
+		 * 1.创建一个HashMap<Integer, String> 存储index和poker  其中index用来为扑克牌排序
+		 * 2.创建一个ArrayList<Integer> 存储index的值   该集合用于洗牌
+		 * 3.创建一个TreeSet<Integer>   TreeSet<>集合具有自动排序功能  用来存储玩家所拿到的牌
+		 */
+		
+		int index = 0;     // 牌的下标
+		HashMap<Integer, String> hm = new HashMap<>();
+		ArrayList<Integer> list = new ArrayList<>();
+		for (String s1 : num) {
+			for (String s2 : color) {
+				hm.put(index, s2.concat(s1));      // 存储前52张牌  index: 0 ~ 51
+				index++;
+				list.add(index);
+			}
+		}
+		hm.put(index++, "小王");       // 存储"小王"   index为52
+		list.add(index);
+		hm.put(index, "大王");         // 存储"大王"   index为53
+		list.add(index);
+		
+		/*洗牌*/
+		Collections.shuffle(list);
+		
+		/*发牌*/
+		TreeSet<Integer> player1 = new TreeSet<>();
+		TreeSet<Integer> player2 = new TreeSet<>();
+		TreeSet<Integer> myself = new TreeSet<>();
+		TreeSet<Integer> dipai = new TreeSet<>();
+		
+		for (int i = 0; i < hm.size(); i++) {
+			if (i >= hm.size() - 3) {
+				dipai.add(list.get(i));      // index = list.get(i)
+			} else if (i%3 == 0) {
+				player1.add(list.get(i));
+			} else if (i%3 ==1) {
+				player2.add(list.get(i));
+			} else {
+				myself.add(list.get(i));
+			}
+		}
+		
+		
+		/*看牌*/
+		
+		/*定义方法:
+		 * 
+		 * 1.返回值类型为void
+		 * 2.需要传的值为HashMap<Integer, String> hm, TreeSet<Integer> ts, 和需要查找到玩家String name    TreeSet<Integer>拿到的是所有的键
+		 */ 
+	
+		lookPoker(hm, player1, "plarer1");
+		lookPoker(hm, player2, "plarer2");
+		lookPoker(hm, myself, "myself");
+		lookPoker(hm, dipai, "底牌");
+	}
+	
+	private static void lookPoker(HashMap<Integer, String> hm, TreeSet<Integer> ts, String name) {
+		System.out.print(name + "牌为: ");
+		for (Integer i : ts) {     // i为ts中每一个键
+			System.out.print(hm.get(i) + " ");
+		}
+		System.out.println();
+	}
+}
+
+
+
+
+
+
+
+
+
+

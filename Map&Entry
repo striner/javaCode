@@ -1,0 +1,85 @@
+
+知识整理:
+
+ 1.Map.Entry<K,V>是Map接口的一个内部接口, 而子类Entry<K,V>实现了Map.Entry<K,V>接口.
+ 2.Map内部包含keySet()、entrySet()等方法, Map没有迭代器iterator.
+ 3.Set<Map.Entry<K, Y>> entrySet()方法: 返回此映射中包含的映射关系的Set视图. 内部包含getKey(),getValue等方法。
+
+
+
+要求:
+
+  实现Map集合的遍历并输出键和值
+
+
+
+分析:
+
+ 1.获取所有键值对对象的集合
+ 2.遍历该键值对对象
+ 3.根据键值对对象获取键和值 
+
+
+
+
+代码实现:
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Map_Entry {
+
+	public static void main(String[] args) {
+	
+		/*输入键值对数据*/
+	
+		Map<String, Integer> map = new HashMap<>();
+		
+		//方法一
+	  map.put("aaa", 111);
+		map.put("bbb", 222);
+		map.put("ccc", 333);
+		map.put("ddd", 444);
+		
+		//方法二
+		Scanner input = new Scanner(System.in);
+		System.out.println("please input data as 'key, value':");
+		
+		while (input.hasNext()) {       //  ctrl + z   ==>   停止录入
+			String line = input.nextLine();
+			String[] arr = line.split(", ");        //用', '对字符串line进行分割,分割结果以arr[]类型存储
+			String key = arr[0];
+			Integer value = Integer.valueOf(arr[1]);       //将String类型的value值封装成Integer类型
+			map.put(key, value);
+		}
+		
+		input.close();
+		
+		
+		
+		/*根据键值对对象获取键和值*/
+		
+		Set<Map.Entry<String, Integer>> enterSet = map.entrySet();		// entrySet()方法:返回此映射中包含的映射关系的Set视图
+		
+		//方法一
+		for (Map.Entry<String, Integer> entry : enterSet) {
+			System.out.println(entry.getKey() + " = " + entry.getValue());
+		}
+		
+		//方法二
+		Iterator<Map.Entry<String, Integer>> it = enterSet.iterator();  //获取迭代器
+		
+		while (it.hasNext()) {
+			Map.Entry<String, Integer> me = it.next();     //获取每一个Entry对象 父类引用指向子类对象
+			//Entry<String, Integer> me = it.next();       //直接获取子类对象
+			
+			String key = me.getKey();
+			Integer value = me.getValue();
+			System.out.println(key + " = " + value);
+		}
+	}
+}
+

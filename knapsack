@@ -1,0 +1,36 @@
+public class Main {
+/**
+ * 背包问题
+ * 
+ * 一小偷偷东西,所背背包最大承重为:C
+ * 商场内有N-1件货品,每件货物重为wi,自身为价值vi
+ * 求小偷背包内所能装的东西的最大价值
+ * @param args
+ */
+	public static void main(String[] args) {
+
+		int N = 6;  //设定商场内一共有5件货品
+		int W = 21;  //设货品中最大重量为20
+		
+		int[][] B = new int[N][W];   //组建最大价值二维表
+		
+		int[] w = {0, 2, 3, 4, 5, 9};
+		int[] v = {0, 3, 4, 5, 8, 10};
+		
+		for (int i = 1; i < N; i++) {
+			for (int C = 1; C < W; C++) {   //C为背包的最大承重
+				if (w[i] > C) {
+					B[i][C] = B[i-1][C];
+				} else {
+					int value1 = B[i - 1][C - w[i]] + v[i];   //偷
+					int value2 = B[i - 1][C];   //不偷
+					B[i][C] = value1 > value2 ? value1 : value2;
+				}
+			}
+		}
+		
+		System.out.println(B[N-1][W-1]);   
+		
+	}
+
+}

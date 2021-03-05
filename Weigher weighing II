@@ -1,0 +1,37 @@
+//天秤称重 进制解法  用自字符串拼接结果
+//三进制返回值为: 0 1 2
+//返回值为0则表示该位权重不取
+//返回值为1表示加上该为权重
+//返回值为2表示需该权重需要加上两遍,不符合. 故需将其转换为-1减掉该位权重,对商进行改变 
+//如: 2 ÷ 3 = 2 ... 0  ==  -1 ... 1
+class Main1 {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int w = input.nextInt();
+		
+		for (int i = 1; i <= w; i++) {
+			System.out.println(i + ": " + fun(i));
+		}
+		
+		input.close();
+	}
+	public static String fun(int w) {
+
+		String str = "";
+		
+		int q = 1;   //权重
+		while(w > 0) {
+			int s = w/3;   //商
+			if (w%3 == 1) str = "+" + q + str;    //若余数为1则加上当前权重
+			if (w%3 == 2) {    //若余数为2则减去当前权重
+				//w += q;
+				s++;
+				str = "-" + q + str;
+			}
+			w = s;
+			q *= 3;
+		}
+		
+		return str.substring(1);   //去掉str首符号返回
+	}
+}

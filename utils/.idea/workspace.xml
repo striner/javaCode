@@ -1,0 +1,1310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
+  </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="test:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d7974ab6-a413-4c32-8486-1cf36d401dbc" name="Default" comment="utils工具类开发。">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/test_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/common/utils/FormatUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/enumeration/errorMessageEnum/ErrorMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/enumeration/errorMessageEnum/ErrorMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/utils/RadixUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/utils/RadixUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/utils/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/utils/StringUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/RSAUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/RSAUtilTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/RadixUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/RadixUtilTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/StringUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/StringUtilTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/common/utils/RadixUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/common/utils/RadixUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/utils/RSAUtilTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/utils/RSAUtilTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/utils/RadixUtilTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/utils/RadixUtilTest.class" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/utils$RSAUtilTest_test1.ic" NAME="RSAUtilTest.test1 Coverage Results" MODIFIED="1545217760167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>utils.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/utils$RSAUtilTest.ic" NAME="RSAUtilTest Coverage Results" MODIFIED="1545216348613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>utils.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DeCompressUtilTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/utils/DeCompressUtilTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StringUtil.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/StringUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="267" column="33" lean-forward="true" selection-start-line="267" selection-start-column="33" selection-end-line="267" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StringUtilTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/utils/StringUtilTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="988">
+              <caret line="59" column="65" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ErrorMessage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/enumeration/errorMessageEnum/ErrorMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RSAUtilTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/utils/RSAUtilTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RadixUtilTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/utils/RadixUtilTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1102">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InvocationTargetException.java" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/java/jdk/src.zip!/java/lang/reflect/InvocationTargetException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="874">
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>hexStrToBytes</find>
+      <find>bytesToHexStr</find>
+      <find>Str</find>
+      <find>str</find>
+      <find>.separator</find>
+      <find>1024</find>
+      <find>Invalid</find>
+      <find>Cipher</find>
+      <find>getKeyPair</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>String</replace>
+      <replace>string</replace>
+      <replace>KEY_SIZE</replace>
+      <replace>INVALID_PARAMETER</replace>
+      <replace>generateKeyPair</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/example.log" />
+        <option value="$PROJECT_DIR$/src/main/java/common/vo/Paged.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/PageUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/java/utils/PageUtilTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/enumeration/fileTypeEnum/FileType.java" />
+        <option value="$PROJECT_DIR$/src/test/java/utils/ZipUtilTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/ZipUtil.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/utils/CompressUtilTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/CompressUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/IOUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/PooledDataSource.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
+        <option value="$PROJECT_DIR$/src/test/java/utils/PooledDateSourseTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/utils/PropertiesUtilTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/PropertiesUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/ThreadSleepUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/java/utils/ThreadSleepUtilTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/DeCompressUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/RSAUtil01.java" />
+        <option value="$PROJECT_DIR$/src/test/java/utils/RSAUtil01Test.java" />
+        <option value="G:/offer/58实习/IdeaProjects/IdeaProjects/com.bj58.common.utils/src/main/java/com/bj58/common/utils/RSAUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/AESUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/java/utils/DeCompressUtilTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/DateUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/RSAUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/java/utils/RSAUtilTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/RadixUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/java/utils/RadixUtilTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/utils/StringUtilTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/FormatUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/enumeration/errorMessageEnum/ErrorMessage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/StringUtil.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-57" />
+    <option name="y" value="78" />
+    <option name="width" value="1382" />
+    <option name="height" value="785" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="commons-lang3&#9;FILE&#9;jar://C:/Users/striner/.m2/repository/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar!/META-INF/maven/org.apache.commons/commons-lang3" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="public" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="utils" />
+      <recent name="common.utils" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\git\codes\javaCode\utils\src\main\java\common" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.RadixUtilTest.test4">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="DeCompressUtilTest.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="utils" />
+      <option name="MAIN_CLASS_NAME" value="utils.DeCompressUtilTest" />
+      <option name="METHOD_NAME" value="test3" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="RSAUtil01Test.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="utils" />
+      <option name="MAIN_CLASS_NAME" value="utils.RSAUtil01Test" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="RSAUtilTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="utils" />
+      <option name="MAIN_CLASS_NAME" value="utils.RSAUtilTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="RSAUtilTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="utils" />
+      <option name="MAIN_CLASS_NAME" value="utils.RSAUtilTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="RadixUtilTest.test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="utils" />
+      <option name="MAIN_CLASS_NAME" value="utils.RadixUtilTest" />
+      <option name="METHOD_NAME" value="test4" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.DeCompressUtilTest.test3" />
+      <item itemvalue="JUnit.RSAUtil01Test.test2" />
+      <item itemvalue="JUnit.RSAUtilTest.test2" />
+      <item itemvalue="JUnit.RSAUtilTest.test1" />
+      <item itemvalue="JUnit.RadixUtilTest.test4" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.RadixUtilTest.test4" />
+        <item itemvalue="JUnit.RSAUtilTest.test2" />
+        <item itemvalue="JUnit.RSAUtilTest.test1" />
+        <item itemvalue="JUnit.DeCompressUtilTest.test3" />
+        <item itemvalue="JUnit.RSAUtil01Test.test2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d7974ab6-a413-4c32-8486-1cf36d401dbc" name="Default" comment="" />
+      <created>1543471582861</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1543471582861</updated>
+      <workItem from="1543471591371" duration="277000" />
+      <workItem from="1543480766952" duration="16590000" />
+      <workItem from="1543541171889" duration="2476000" />
+      <workItem from="1543643802933" duration="11304000" />
+      <workItem from="1543665919399" duration="7460000" />
+      <workItem from="1543732463196" duration="21493000" />
+      <workItem from="1543826666768" duration="2142000" />
+      <workItem from="1543919006066" duration="13600000" />
+      <workItem from="1543993782157" duration="14624000" />
+      <workItem from="1544063203405" duration="2171000" />
+      <workItem from="1544085673546" duration="18244000" />
+      <workItem from="1544432223556" duration="7607000" />
+      <workItem from="1544502220883" duration="15776000" />
+      <workItem from="1544611470208" duration="8276000" />
+      <workItem from="1544690332219" duration="32691000" />
+      <workItem from="1544837496152" duration="24854000" />
+      <workItem from="1545012874411" duration="21967000" />
+      <workItem from="1545191209062" duration="8201000" />
+      <workItem from="1545214301361" duration="9698000" />
+      <workItem from="1545293556883" duration="10289000" />
+      <workItem from="1545358374539" duration="18779000" />
+      <workItem from="1545711640620" duration="7085000" />
+      <workItem from="1545812596552" duration="9606000" />
+      <workItem from="1545902050421" duration="591000" />
+      <workItem from="1545984427650" duration="5164000" />
+      <workItem from="1554726588575" duration="37000" />
+    </task>
+    <task id="LOCAL-00001" summary="utils工具类开发">
+      <created>1543481636488</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1543481636488</updated>
+    </task>
+    <task id="LOCAL-00002" summary="utils工具类开发">
+      <created>1543652610801</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1543652610801</updated>
+    </task>
+    <task id="LOCAL-00003" summary="utils工具类测试开发">
+      <created>1543653123929</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1543653123929</updated>
+    </task>
+    <task id="LOCAL-00004" summary="utils工具类测试开发">
+      <created>1543653300471</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1543653300471</updated>
+    </task>
+    <task id="LOCAL-00005" summary="utils工具类测试开发">
+      <created>1543653333213</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1543653333213</updated>
+    </task>
+    <task id="LOCAL-00006" summary="utils工具类测试开发">
+      <created>1543657558739</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1543657558739</updated>
+    </task>
+    <task id="LOCAL-00007" summary="utils工具类测试开发">
+      <created>1543734099469</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1543734099469</updated>
+    </task>
+    <task id="LOCAL-00008" summary="utils工具类测试开发">
+      <created>1543735425667</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1543735425667</updated>
+    </task>
+    <task id="LOCAL-00009" summary="utils工具类测试开发">
+      <created>1543735725224</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1543735725224</updated>
+    </task>
+    <task id="LOCAL-00010" summary="utils工具类测试开发">
+      <created>1543739959206</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1543739959207</updated>
+    </task>
+    <task id="LOCAL-00011" summary="utils工具类测试开发">
+      <created>1543740130345</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1543740130345</updated>
+    </task>
+    <task id="LOCAL-00012" summary="utils工具类测试开发">
+      <created>1543740166923</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1543740166923</updated>
+    </task>
+    <task id="LOCAL-00013" summary="utils工具类测试开发">
+      <created>1543740339287</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1543740339287</updated>
+    </task>
+    <task id="LOCAL-00014" summary="utils工具类测试开发">
+      <created>1543919350456</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1543919350456</updated>
+    </task>
+    <task id="LOCAL-00015" summary="utils工具类测试开发">
+      <created>1543926616363</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1543926616364</updated>
+    </task>
+    <task id="LOCAL-00016" summary="utils工具类测试开发">
+      <created>1544086295792</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1544086295792</updated>
+    </task>
+    <task id="LOCAL-00017" summary="utils工具类开发">
+      <created>1544611848271</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1544611848271</updated>
+    </task>
+    <task id="LOCAL-00018" summary="utils工具类开发，对压缩工具类和解压缩工具类相关的类进行了更新。">
+      <created>1544789985778</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1544789985778</updated>
+    </task>
+    <task id="LOCAL-00019" summary="utils工具类开发。">
+      <created>1544873183253</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1544873183253</updated>
+    </task>
+    <task id="LOCAL-00020" summary="utils工具类开发。">
+      <created>1545392241706</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1545392241706</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="RadixUtilTest_test4 - 2018.12.26 at 18h 41m 25s.xml">
+      <configuration name="RadixUtilTest.test4" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RadixUtilTest_test4 - 2018.12.26 at 18h 52m 42s.xml">
+      <configuration name="RadixUtilTest.test4" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RadixUtilTest_test4 - 2018.12.26 at 18h 52m 52s.xml">
+      <configuration name="RadixUtilTest.test4" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RadixUtilTest_test4 - 2018.12.26 at 18h 55m 21s.xml">
+      <configuration name="RadixUtilTest.test4" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RadixUtilTest_test4 - 2018.12.26 at 18h 55m 31s.xml">
+      <configuration name="RadixUtilTest.test4" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RadixUtilTest_test4 - 2018.12.26 at 18h 58m 17s.xml">
+      <configuration name="RadixUtilTest.test4" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RadixUtilTest_test4 - 2018.12.26 at 19h 02m 13s.xml">
+      <configuration name="RadixUtilTest.test4" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RadixUtilTest_test4 - 2018.12.26 at 19h 02m 37s.xml">
+      <configuration name="RadixUtilTest.test4" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RadixUtilTest_test4 - 2018.12.26 at 19h 02m 56s.xml">
+      <configuration name="RadixUtilTest.test4" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RadixUtilTest_test4 - 2018.12.26 at 19h 04m 22s.xml">
+      <configuration name="RadixUtilTest.test4" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="208957000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.32838285" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.24257426" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.2624811" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49924356" weight="0.32838285" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.24917492" />
+      <window_info anchor="bottom" id="Spring" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.20957096" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4987715" visible="true" weight="0.21785174" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32980332" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.5012285" side_tool="true" weight="0.22163388" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.44059405" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32980332" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32838285" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="9" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="utils工具类测试开发" />
+    <MESSAGE value="utils工具类开发" />
+    <MESSAGE value="utils工具类开发，对压缩工具类和解压缩工具类相关的类进行了更新。" />
+    <MESSAGE value="utils工具类开发。" />
+    <option name="LAST_COMMIT_MESSAGE" value="utils工具类开发。" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/utils/PageUtilTest.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/utils/PropertiesUtilTest.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/utils/PropertiesUtilTest.java</url>
+          <line>12</line>
+          <properties />
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/java/jdk/src.zip!/java/security/SecureRandom.java</url>
+          <line>426</line>
+          <properties />
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/utils/DeCompressUtilTest.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/utils/RSAUtilTest.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/utils/RadixUtilTest.java</url>
+          <line>56</line>
+          <properties />
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="58" />
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>number.toUpperCase().charAt(t)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>DIGITS_UPPER.toString()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>DIGITS_UPPER.toString().indexOf(number.toUpperCase().substring(t, t + 1))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>number.toUpperCase().substring(t, t + 1)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(&quot;&quot; + System.currentTimeMillis() * Math.random() * Math.random()).getBytes(Charset.forName(&quot;UTF-8&quot;))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>((&quot;&quot; + System.currentTimeMillis() * Math.random() * Math.random()).getBytes(Charset.forName(&quot;UTF-8&quot;))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>System.currentTimeMillis() * Math.random() * Math.random().getBytes(Charset.forName(&quot;UTF-8&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>System.currentTimeMillis() * Math.random() * Math.random()).getBytes(Charset.forName(&quot;UTF-8&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/ThreadSleepUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/jre/lib/rt.jar!/sun/misc/Unsafe.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="47" column="28" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/util/Random.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="1222" selection-start-line="1222" selection-end-line="1222" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/lang/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12155">
+          <caret line="127" column="48" selection-start-line="127" selection-start-column="48" selection-end-line="127" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/lang/Math.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="772" column="75" selection-start-line="772" selection-start-column="65" selection-end-line="772" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/nio/charset/Charset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="529" selection-start-line="529" selection-end-line="529" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/lang/ClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="487" column="63" selection-start-line="487" selection-start-column="35" selection-end-line="487" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/security/SecureRandom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="426" column="33" lean-forward="true" selection-start-line="426" selection-start-column="33" selection-end-line="426" selection-end-column="33" />
+          <folding>
+            <element signature="e#15397#15398#0" expanded="true" />
+            <element signature="e#15448#15449#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/jre/lib/rt.jar!/sun/security/provider/SecureRandom.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="59" column="37" lean-forward="true" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/security/SecureRandomSpi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="50" column="28" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="988">
+          <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/statements/InvokeMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/utils/AESUtilTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/DeCompressUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1235">
+          <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/utils/DESUtilTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/RSAUtil01.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/utils/RSAUtil01Test.java" />
+    <entry file="file://G:/offer/58实习/IdeaProjects/IdeaProjects/com.bj58.common.utils/src/main/java/com/bj58/common/utils/RadixUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-133">
+          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="172" selection-start-line="172" selection-end-line="172" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/DESUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/offer/58实习/IdeaProjects/IdeaProjects/com.bj58.common.utils/src/main/java/com/bj58/common/utils/RSAUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="88" column="83" selection-start-line="88" selection-start-column="83" selection-end-line="88" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/security/KeyPairGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="486" column="19" selection-start-line="486" selection-start-column="19" selection-end-line="486" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/security/PublicKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/security/KeyPair.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="68" column="17" lean-forward="true" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/utils/PageUtilTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/PageUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1691">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="479" selection-start-line="479" selection-end-line="479" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/AESUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="80" column="7" lean-forward="true" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="150" column="27" lean-forward="true" selection-start-line="150" selection-start-column="27" selection-end-line="150" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/security/spec/RSAPrivateKeySpec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/security/KeyFactorySpi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/jre/lib/rt.jar!/sun/security/rsa/RSAPublicKeyImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/security/KeyFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="333" selection-start-line="333" selection-end-line="333" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/security/spec/RSAPublicKeySpec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/jre/lib/rt.jar!/sun/security/rsa/RSAKeyFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="105" column="28" lean-forward="true" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/math/BigInteger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5016">
+          <caret line="299" selection-start-line="299" selection-end-line="299" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/RSAUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="381" column="48" lean-forward="true" selection-start-line="381" selection-start-column="48" selection-end-line="381" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/utils/RSAUtilTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11552">
+          <caret line="659" selection-start-line="659" selection-end-line="659" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/utils/RadixUtilTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/RadixUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="243" selection-start-line="278" selection-start-column="55" selection-end-line="278" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/utils/DeCompressUtilTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/FormatUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="211" selection-start-line="211" selection-end-line="211" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/utils/StringUtilTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="988">
+          <caret line="59" column="65" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/lang/reflect/InvocationTargetException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/enumeration/errorMessageEnum/ErrorMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/StringUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="267" column="33" lean-forward="true" selection-start-line="267" selection-start-column="33" selection-end-line="267" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>test:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>test</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Java EE 6-Java EE 6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

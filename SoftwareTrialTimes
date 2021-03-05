@@ -1,0 +1,31 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+/*
+ * 1.创建带缓冲的输入流对象,需使用readLine方法保证数据的原样性
+ * 2.将读取到的字符串转换成int数
+ * 3.对int数进行判断,大于0则一一写回,不大于0则提示购买正版
+ * 4.if判断中将结果打印并通过输出流写到文件上
+ */
+public class SoftwareTrialTimes {    //试用软件使用次数情况模拟
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new FileReader("times.txt"));
+		
+		String line = br.readLine();
+		int times = Integer.parseInt(line);
+		
+		if (times > 0) {
+			System.out.println("您还有" + --times + "次试用机会");
+			FileWriter fw = new FileWriter("times.txt");
+			fw.write(times + "");
+			fw.close();
+		}else{
+			System.out.println("您的使用次数已到,请购买正版!");
+		}
+		
+		br.close();
+		
+	}
+}

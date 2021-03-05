@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String string = input.nextLine();
+		char[] ch = string.toCharArray();
+		fun(ch);
+		
+		input.close();
+	}
+
+	public static void fun(char[] ch) {
+
+		for (int i = 0; i < ch.length; i++) {
+			for (int j = i + 1; j < ch.length; j++) {
+				for (int k = j + 1; k < ch.length; k++) {
+					System.out.println("" + ch[i] + ch[j] + ch[k]);
+				}
+			}
+		}
+	}
+}

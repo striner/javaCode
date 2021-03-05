@@ -1,0 +1,222 @@
+/* 第一次我提交的代码在eclipse上运行成功,但因运行超时而未能通过评测.. 先上我第一次未能通过评测的代码吧,正确的代码我会在后面出示 */
+
+import java.util.Scanner;
+
+/**
+ * 问题描述
+　　给定n个十六进制正整数，输出它们对应的八进制数。
+
+	输入格式
+	　　输入的第一行为一个正整数n （1<=n<=10）。
+	　　接下来n行，每行一个由0~9、大写字母A~F组成的字符串，表示要转换的十六进制正整数，每个十六进制数长度不超过100000。
+	
+	输出格式
+	　　输出n行，每行为输入对应的八进制正整数。
+	
+	　　【注意】
+	　　输入的十六进制数不会有前导0，比如012A。
+	　　输出的八进制数也不能有前导0。
+	
+	样例输入
+	　　2
+	　　39
+	　　123ABC
+	
+	样例输出
+	　　71
+	　　4435274
+	
+	　　【提示】
+	　　先将十六进制数转换成某进制数，再由某进制数转换成八进制。
+ * @param args
+ */
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		int n = input.nextInt();       
+		String[] in = new String[n];   
+		String[] out = new String[n];
+		for (int i = 0; i < n; i++) {
+			in[i] = input.next();
+			int len = in[i].length();
+			int j = len%3;
+			String strIn = "";
+			String strOut = "";
+			if (j == 1) {
+				strIn = in[i].charAt(0) + "";
+				strOut = trans(strIn);
+			} else if (j == 2) {
+				strIn = in[i].charAt(0) + "" + in[i].charAt(1) + "";
+				strOut = trans(strIn);
+			} else {
+				strOut = "";
+			}
+			
+			while (j < in[i].length()) {
+				strIn = in[i].charAt(j) + "" + in[i].charAt(j + 1) + "" + in[i].charAt(j + 2) + "";
+				strOut += trans(strIn);
+				j += 3;
+			}
+			
+			out[i] = strOut;
+		}
+		for (String string : out) {
+			System.out.println(string);
+		}
+		input.close();
+	}
+		
+	private static String trans(String strIn) {
+		//return Integer.toString(Integer.parseInt(strIn,16),8);
+		//十六进制转二进制  
+		String bs = Integer.toBinaryString(Integer.valueOf(strIn, 16));  
+	    //二进制转八进制  
+	    String os = Integer.toOctalString((Integer.valueOf(bs, 2)));  
+		return os;
+	}  
+}
+
+
+
+/* 通过评测的代码 */
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		/* 输入 */
+		Scanner input = new Scanner(System.in);
+		int n = input.nextInt();
+		String[] str = new String[n];
+		for (int i = 0; i < n; i++) {
+			str[i] = input.next();
+		}
+		input.close();
+		
+		StringBuffer sb = new StringBuffer();
+		
+		for (int i = 0; i < n; i++) {
+			
+			/* 十六进制转二进制 */
+			for (int j = 0; j < str[i].length(); j++) {
+				char ch = str[i].charAt(j);
+				switch (ch) {
+				case '0':
+					sb.append("0000");
+					break;
+				case '1':
+					sb.append("0001");
+					break;
+				case '2':
+					sb.append("0010");
+					break;
+				case '3':
+					sb.append("0011");
+					break;
+				case '4':
+					sb.append("0100");
+					break;
+				case '5':
+					sb.append("0101");
+					break;
+				case '6':
+					sb.append("0110");
+					break;
+				case '7':
+					sb.append("0111");
+					break;
+				case '8':
+					sb.append("1000");
+					break;
+				case '9':
+					sb.append("1001");
+					break;
+				case 'A':
+					sb.append("1010");
+					break;
+				case 'B':
+					sb.append("1011");
+					break;
+				case 'C':
+					sb.append("1100");
+					break;
+				case 'D':
+					sb.append("1101");
+					break;
+				case 'E':
+					sb.append("1110");
+					break;
+				case 'F':
+					sb.append("1111");
+					break;
+				}
+			}
+			
+			
+			/* 二进制转十六进制 */
+			
+			if (sb.length() % 3 == 0) {
+				if (sb.substring(0, 3).equals("000")) {
+					sb.delete(0, 3);
+				}
+			} else if (sb.length() % 3 == 1) {
+				if (sb.substring(0, 1).equals("0")) {
+					sb.delete(0, 1);
+				} else {
+					sb.insert(0, "00");
+				}
+				
+			} else if (sb.length() % 3 == 2) {
+				if (sb.substring(0, 2).equals("00")) {
+					sb.delete(0, 2);
+				} else {
+					sb.insert(0, "0");
+				}
+			}
+				
+			int[] c = new int[sb.length()/3];
+			int m = 0;
+			for (int k = 0; k < sb.length(); k+=3) {
+				String string = sb.substring(k, k + 3);
+				switch (string) {
+				case "000":
+					c[m++] = 0;
+					break;
+				case "001":
+					c[m++] = 1;
+					break;
+				case "010":
+					c[m++] = 2;
+					break;
+				case "011":
+					c[m++] = 3;
+					break;
+				case "100":
+					c[m++] = 4;
+					break;
+				case "101":
+					c[m++] = 5;
+					break;
+				case "110":
+					c[m++] = 6;
+					break;
+				case "111":
+					c[m++] = 7;
+					break;
+				}
+			}
+			/* 打印输出 */
+			for (int j = 0; j < m; j++) {
+				System.out.print(c[j]);
+			}
+			System.out.println();
+			sb.delete(0, sb.length());
+		}
+	}
+}
+	
+

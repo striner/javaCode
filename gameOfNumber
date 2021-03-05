@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		long n = input.nextLong();
+		long k = input.nextLong();
+		long T = input.nextLong();
+		long nu = 1;  // 栋栋报号
+		long sum = 0;
+		long t = 0;
+		long num = (1 + n)*n/2;
+		while (t < T) {
+			sum += nu;
+			nu = (nu + num + n*n*t)%k;
+			t++;
+		}
+		System.out.println(sum);
+		input.close();
+	}
+}

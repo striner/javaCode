@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String str = input.nextLine();
+		char[] arr = str.toCharArray();
+		fun(arr, 0);
+		
+		input.close();
+	}
+
+	public static void fun(char[] arr, int index) {   //arr:待排数据   index: 考虑的当前位置(数组下标)
+
+		if (index == arr.length - 1) {
+			System.out.println(String.valueOf(arr));
+			return;
+		}
+		
+		for (int i = index; i < arr.length; i++) {
+			char ch = arr[i]; arr[i] = arr[index]; arr[index] = ch;     //试探
+			fun(arr, index + 1);
+			ch = arr[i]; arr[i] = arr[index]; arr[index] = ch;      //回溯
+		}
+	}
+}

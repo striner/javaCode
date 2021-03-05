@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<!-- 员工配置 -->
+	<package name="sta" namespace="/" extends="common">
+		<action name="staffAction_*" class="striner.crm.staff.web.action.StaffAction" method="{1}">
+			<!-- 1 登录成功 -->
+			<result name="success" type="redirectAction">staffAction_home</result>
+			<!-- 2 没有登录成功，需要登录  （已在struts.xml配置）
+			<result name="login">/WEB-INF/pages/login.jsp</result>
+			-->
+			<!-- 3 首页 -->
+			<result name="home">/WEB-INF/pages/frame.jsp</result>
+			<!-- 4 查询所有 -->
+			<result name="findAll">/WEB-INF/pages/staff/listStaff.jsp</result>
+			<!-- 5 编辑前，显示jsp页面 -->
+			<result name="editUI">/WEB-INF/WEB-INF/pages/staff/editStaff.jsp</result>
+			<!-- 6 编辑成功 
+				* 重定向可以注入详细配置
+				* 默认使用
+					<result name="success" type="redirectAction">staffAction_home</result>
+					给actionName进行注入
+			-->
+			
+
+		</action>
+	</package>
+</struts>

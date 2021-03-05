@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Main {
+	//出栈顺序模拟 求1到n个数的进栈出栈顺序一共有多少种
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int n = input.nextInt();     //所模拟数的个数
+		
+		for (int i = 1; i < n; i++) {
+			System.out.println(i + " : " + f(i));
+		}
+		
+		input.close();
+	}
+
+	public static int f(int n) {
+
+		return f(n, 0);
+	}
+
+
+	public static int f(int n, int m) {    //n为等待进栈的数目  m为栈内已有的个数
+
+		if (n == 0) return 1;
+		if (m == 0)	return f(n - 1, 1);   //栈空
+		
+		return f(n - 1, m + 1) + f(n, m - 1);
+	}
+}

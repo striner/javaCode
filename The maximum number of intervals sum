@@ -1,0 +1,54 @@
+//区间和  
+//打印出最大的区间和
+//分治法  二分法
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+		System.out.println(work(new int[]{2, 4, -7, 5, 2, -1, 2, -4, 3}));
+	}
+
+	public static int work(int[] a) {  //代理方法 中转
+
+		//制造递归条件 将a数组分为两部分
+		return fun(a, 0, a.length);  //[0, a.length)
+	}
+	
+	
+	private static int fun(int[] a, int begin, int end) {
+		if (end - begin == 1) {   //如果该区间只有一个数时,该数大于0则取,小于等于0则不取
+			if (a[begin] > 0) return a[begin];
+			return 0;
+		}
+		
+		//计算三部分的区间和
+		//从begin开始计算[begin, index)
+		//从end开始计算[index, end)
+		//从index向左向右计算并求最大和
+		
+		int index = (begin + end)/2;
+		int sumL = fun(a, begin, index);   //第一部分的区间和
+		int sumR = fun(a, index, end);   //第二部分的区间和
+		 
+		int sumM = 0;   //第三部分的区间和
+		int temp = 0;
+		for (int i = index - 1; i >= begin; i--) {
+			temp += a[i];
+			if (temp > sumM) sumM = temp;
+		}
+		
+		temp = 0;
+		int sumMR = 0;   //从中间开始向右的区间和
+		for (int i = index; i < end; i++) {
+			temp += a[i];
+			if (sumMR < temp) sumMR = temp;
+		}
+		sumM += sumMR;
+		
+		int sum = 0;   //最大区间和
+		sum = sumL > sumR ? sumL : sumR;
+		sum = sum > sumM ? sum : sumM;
+		return sum;
+	}
+}

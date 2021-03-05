@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		int n = input.nextInt();
+		int m = input.nextInt();
+		//char[][] ch = new char[n][m];   涉及二维数组动态分配,会出现运行错误!
+		char[][] ch = new char[26][26];
+		for (int i = 0; i < n; i++) {
+			char c = 'A';
+			for (int j = i; j < m; j++) {
+				ch[i][j] = c++;
+			}
+			c = 'A';
+			for (int j = i-1; j >= 0; j--) {
+				ch[i][j] = ++c;
+			}
+		}
+		
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				System.out.print(ch[i][j]);
+			}
+			System.out.println();
+		}
+		input.close();
+	}
+	
+}

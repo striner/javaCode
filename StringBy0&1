@@ -1,0 +1,25 @@
+public class Main {
+
+	public static void main(String[] args) {
+		
+		String[] str = new String[32];
+		for (int i = 0; i < 32; i++) {
+			str[i] = Integer.toBinaryString(i);
+			
+			if (str[i].length() == 1) {
+				System.out.println("0000" + str[i]);
+			} else if (str[i].length() == 2) {
+				System.out.println("000" + str[i]);
+			} else if (str[i].length() == 3) {
+				System.out.println("00" + str[i]);
+			} else if (str[i].length() == 4) {
+				System.out.println("0" + str[i]);
+			} else {
+				System.out.println(str[i]);
+			}
+		}
+		
+		
+	}
+
+}

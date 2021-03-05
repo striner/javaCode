@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String str = input.nextLine();
+		List<String> list = fun(str);
+
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
+		}
+		
+		input.close();
+	}
+
+	public static List<String> fun(String str) {
+
+		List<String> list = new ArrayList<>();
+		if (str.length() == 1) {
+			list.add(str);
+			return list;
+		}
+		for (int i = 0; i < str.length(); i++) {
+			char c = str.charAt(i);
+			List<String> t = fun(str.substring(0, i) + str.substring(i + 1));
+			for (int j = 0; j < t.size(); j++) {
+				list.add("" + c + t.get(j));
+			}
+		}
+		return list;
+	}
+}
+

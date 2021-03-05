@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+
+public class JosephRing {      //约瑟夫环
+    
+    public static void main(String[] args) {
+        badlyNumber(12, 5);
+    }
+
+    private static void badlyNumber(int total, int num) {
+        ArrayList<Integer> list = new ArrayList<>();               //用集合来存储1到num的人
+        
+        for (int i = 1; i <= total; i++) {                //将1到total的数添加到集合list中
+            list.add(i);
+        }
+        
+        int count = 1;                    //count用来记录人的数号
+        for (int i = 0; list.size() >= 1; i++) {
+            if (i == list.size()) {                  //当i增长到最大的索引+1时 i重新归0
+                i = 0;
+            }
+            
+            if (count % num == 0) {            //该人数号为num的倍数时出圈
+                System.out.print(list.get(i) + " ");
+                list.remove(i--);
+            }
+            
+            //i = (i + 1)%list.size(); --> 方法2 同时去掉for循环中的i++
+            count++;
+        }
+    }
+}

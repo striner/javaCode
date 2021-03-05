@@ -1,0 +1,59 @@
+ArrayList属于List集合的子类, 具有:有序(存,取顺序一致),有索引,可重复存储的特点.
+
+
+要求:
+
+ 用ArrayList去除字符串中重复的值
+
+
+分析:
+ 1.创建新集合
+  2.将新集合中的值与老集合中的值进行对比,若老集合中的值新集合中没有,则新集合对该老集合的值进行存储
+
+
+代码:
+
+    import java.util.ArrayList;  
+    import java.util.Iterator;  
+    import java.util.Scanner;  
+      
+    public class RemoveTheSameData_ArrayList {       //ArrayList去重字符串中重复的值  
+       
+        public static void main(String[] args) {  
+            Scanner sc = new Scanner(System.in);  
+            ArrayList<Object> l = new ArrayList<>();  
+              
+            System.out.println("please input a ArrayList:");  
+            while (sc.hasNext()) {  
+                l.add(sc.nextLine());        //ctrl + z ==> 停止输入  
+            }  
+            /*l.add("a"); 
+            l.add("b"); 
+            l.add("e"); 
+            l.add("b"); 
+            l.add("a"); 
+            l.add("a"); 
+            l.add("c"); 
+            l.add("a");*/  
+              
+            ArrayList<Object> newList = getSingle(l);  
+            System.out.println("\nthe new ArrayList is:");  
+            System.out.println(newList);  
+            sc.close();  
+        }  
+      
+        public static ArrayList<Object> getSingle(ArrayList<?> list) {  
+              
+            ArrayList<Object> newList = new ArrayList<>();         //建立新集合  
+            Iterator<?> it = list.iterator();           //获取老集合的迭代器  
+              
+            while (it.hasNext()) {  
+                Object obj = it.next();  
+                if (!newList.contains(obj)) {  
+                    newList.add(obj);  
+                }  
+            }  
+              
+            return newList;  
+        }  
+    }  

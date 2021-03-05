@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int m = input.nextInt();    //共有m个球
+		int n = input.nextInt();    //取n个球
+		int num = fun(m, n);        //共有num种取法
+		System.out.println(num);
+	}
+
+	public static int fun(int m, int n) {
+
+		if (n == 0) return 1;   //m个球中取0个球,只有一种取法
+		if (m == n) return 1;   //m个球中取m个球,只有一种取法
+		
+		//假设有一个球做了标记,那么它就有两种取法: 取 或 不取
+		return fun(m - 1, n - 1) + fun(m - 1, n);
+		
+	}	
+}

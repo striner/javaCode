@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///jpa
+    username: root
+    password: mulin123
+
+  jpa:
+    hibernate:
+#     更新或者创建数据库表结构
+      ddl-auto: update
+#    控制台显示SQL
+    show-sql: true
+

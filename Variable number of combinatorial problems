@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		 Scanner input = new Scanner(System.in);
+		 String str = input.next();   
+		 int n = input.nextInt();    //串str中取n个字母
+		 List<String> list = fun(str, n);
+		 for (int i = 0; i < list.size(); i++) {
+			 System.out.println(list.get(i));
+		 }
+		 
+		 input.close();
+	}
+
+	public static List<String> fun(String str, int n) {
+
+		List<String> list = new ArrayList<>();
+		if (n == 0) {
+			list.add("");
+			return list;
+		}
+		for (int i = 0; i < str.length(); i++) {
+			char ch = str.charAt(i);
+			List<String> t = fun(str.substring(i + 1), n - 1);
+			for (int j = 0; j < t.size(); j++) {
+				list.add("" + ch + t.get(j));
+			}
+		}
+		return list;
+	}
+}

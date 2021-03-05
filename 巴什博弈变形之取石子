@@ -1,0 +1,13 @@
+import java.util.Scanner; 
+public class Main {    
+    public static void main(String[] args) {  
+        Scanner input = new Scanner(System.in);
+    	while(input.hasNextInt()) {
+            int n = input.nextInt();
+        	if (n > 2)
+            	System.out.println("XiaoKe");
+       		else 
+            	System.out.println("XiaoNiu");
+        }
+    }  
+}

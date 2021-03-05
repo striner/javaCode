@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		int r = input.nextInt();
+		
+		System.out.printf("%.7f",3.14159265358979323*r*r);
+		
+		input.close();
+	}
+}

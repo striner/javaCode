@@ -1,0 +1,53 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		int n = input.nextInt();     //年数
+		double r1 = input.nextDouble();      //1年期年利率
+		double r2 = input.nextDouble();      //2年期年利率
+		double r3 = input.nextDouble();      //3年期年利率
+		double r5 = input.nextDouble();      //5年期年利率
+		
+		double ans = fun(n, r1, r2, r3, r5);
+		System.out.printf("%.5f", ans);
+		input.close();
+	}
+
+	public static double fun(int n, double r1, double r2, double r3, double r5) {
+
+		if (n == 0) {
+			return 0;
+		}
+		if (n == 1) {
+			return r1 + 1;
+		}
+		if (n == 2) {
+			double max = Math.max(Math.pow(r2 + 1, 2), Math.pow(r1 + 1, 1)*fun(n - 1, r1, r2, r3, r5));
+			return max;
+		}
+		if (n == 3) {
+			double max = Math.max(Math.pow(r3 + 1, 3), Math.pow(r2 + 1, 2)*fun(n - 2, r1, r2, r3, r5));
+			max = Math.max(max, Math.pow(r1 + 1, 1)*fun(n - 1, r1, r2, r3, r5));
+			return max;
+		}
+		if (n == 4) {
+			double max = Math.max(Math.pow(r3 + 1, 3)*fun(n - 3, r1, r2, r3, r5), Math.pow(r2 + 1, 2)*fun(n - 2, r1, r2, r3, r5));
+			max = Math.max(max, Math.pow(r1 + 1, 1)*fun(n - 1, r1, r2, r3, r5));
+			return max;
+		}
+		if (n == 5) {
+			double max = Math.max(Math.pow(r5 + 1, 5), Math.pow(r3 + 1, 3)*fun(n - 3, r1, r2, r3, r5));
+			max = Math.max(max, Math.pow(r2 + 1, 2)*fun(n - 2, r1, r2, r3, r5));
+			max = Math.max(max, Math.pow(r1 + 1, 1)*fun(n - 1, r1, r2, r3, r5));
+			return max;
+		}
+		//n >= 5
+		double max = Math.max(Math.pow(r5 + 1, 5)*fun(n - 5, r1, r2, r3, r5), Math.pow(r3 + 1, 3)*fun(n - 3, r1, r2, r3, r5));
+		max = Math.max(max, Math.pow(r2 + 1, 2)*fun(n - 2, r1, r2, r3, r5));
+		max = Math.max(max, Math.pow(r1 + 1, 1)*fun(n - 1, r1, r2, r3, r5));
+		return max;
+	}
+
+}
