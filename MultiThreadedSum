@@ -1,0 +1,47 @@
+import java.math.BigInteger;
+import java.util.concurrent.CountDownLatch;
+
+public class MultiThreadedSum {
+
+    /**
+     * 多线程求1-1000w的和
+     * Create by mulin on 2021.03.08
+     */
+    public static void main(String[] args) {
+
+        int num = 100; // 组数
+        int latchNum = 10000000 / 100; // 每组需要计算的数的个数
+        System.out.println("latchNum: " + latchNum);
+        BigInteger[] totalBI = new BigInteger[num];
+        // countdownlunch
+        CountDownLatch countDownLatch = new CountDownLatch(num);
+
+        for (int i = 0; i < num; i++) {
+            final int it = i;
+            new Thread(
+                    () -> {
+                        BigInteger multiply = new BigInteger(it * latchNum + 1 + "").add(new BigInteger((it + 1) * latchNum + "")).multiply(new BigInteger(latchNum / 2 + ""));
+                        totalBI[it] = multiply;
+                        countDownLatch.countDown();
+                    }
+            ).start();
+        }
+
+        try {
+            countDownLatch.await();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            BigInteger bigInteger = new BigInteger("0");
+            for (BigInteger integer : totalBI) {
+                bigInteger = bigInteger.add(integer);
+            }
+            System.out.println("计算结果： " + bigInteger);
+
+            // 用通项式验证
+            System.out.println("直接计算结果： " +
+                    new BigInteger("1").add(new BigInteger("10000000")).multiply(new BigInteger(10000000 / 2 + "")));
+        }
+
+    }
+}
