@@ -1,0 +1,117 @@
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class NumOfProvince {
+
+    /**
+     * 有 n 个城市，其中一些彼此相连，另一些没有相连。如果城市 a 与城市 b 直接相连，且城市 b 与城市 c 直接相连，那么城市 a 与城市 c 间接相连。
+     * 省份 是一组直接或间接相连的城市，组内不含其他没有相连的城市。
+     * 给你一个 n x n 的矩阵 isConnected ，其中 isConnected[i][j] = 1 表示第 i 个城市和第 j 个城市直接相连，而 isConnected[i][j] = 0 表示二者不直接相连。
+     * <p>
+     * 提示：
+     * 1 <= n <= 200
+     * n == isConnected.length
+     * n == isConnected[i].length
+     * isConnected[i][j] 为 1 或 0
+     * isConnected[i][i] == 1
+     * isConnected[i][j] == isConnected[j][i]
+     * 链接：https://leetcode-cn.com/problems/number-of-provinces
+     */
+
+    public static void main(String[] args) {
+        int[][] array1 = new int[][]{{1, 0, 1}, {0, 1, 0}, {1, 0, 1}};
+        int[][] array2 = {
+                {1,0,0,0,0,0,0,0,0,1,0,0,0,0,0},
+                {0,1,0,1,0,0,0,0,0,0,0,0,0,1,0},
+                {0,0,1,0,0,0,0,0,0,0,0,0,0,0,0},
+                {0,1,0,1,0,0,0,1,0,0,0,1,0,0,0},
+                {0,0,0,0,1,0,0,0,0,0,0,0,1,0,0},
+                {0,0,0,0,0,1,0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,1,0,0,0,0,0,0,0,0},
+                {0,0,0,1,0,0,0,1,1,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0},
+                {1,0,0,0,0,0,0,0,0,1,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0,0,1,0,0,0,0},
+                {0,0,0,1,0,0,0,0,0,0,0,1,0,0,0},
+                {0,0,0,0,1,0,0,0,0,0,0,0,1,0,0},
+                {0,1,0,0,0,0,0,0,0,0,0,0,0,1,0},
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,1}};
+        NumOfProvince547 solution = new NumOfProvince547();
+        System.out.println(solution.findCircleNum(array2));
+    }
+
+    public int findCircleNum(int[][] isConnected) {
+
+        int n = isConnected.length;
+        List<Node> nodeList = new ArrayList<>();
+
+        // 初始化
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                if (isConnected[i][j] == 1)
+                    nodeList.add(new Node(i, j));
+            }
+        }
+
+        // 计算
+        int num = 0;
+        for(int i=0; i< nodeList.size();i++) {
+            if(!nodeList.get(i).getFlag()) {
+                nodeCheck(nodeList, nodeList.get(i));
+                num++;
+            }
+        }
+
+        return num;
+    }
+
+    private void nodeCheck(List<Node> nodeList, Node node) {
+        if(!node.getFlag()) {
+            node.setFlag(true);
+            for (Node data : nodeList) {
+                if (!data.getFlag() && (data.getEnd() == node.getEnd() || data.getEnd() == node.getStart() || data.getStart() == node.getEnd() || data.getStart() == node.getStart())) {
+                    nodeCheck(nodeList, data);
+                }
+            }
+        }
+    }
+
+    class Node {
+        private int start;
+        private int end;
+        private boolean flag = false;
+
+        public Node() {
+        }
+
+        public Node(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+
+        public int getStart() {
+            return start;
+        }
+
+        public void setStart(int start) {
+            this.start = start;
+        }
+
+        public int getEnd() {
+            return end;
+        }
+
+        public void setEnd(int end) {
+            this.end = end;
+        }
+
+        public boolean getFlag() {
+            return flag;
+        }
+
+        public void setFlag(boolean flag) {
+            this.flag = flag;
+        }
+    }
+}
