@@ -1,0 +1,90 @@
+package com.striner.test;
+
+public class FlippedBinaryTree226 {
+
+    /**
+     * 翻转一棵二叉树。
+     * <p>
+     * 示例：
+     * <p>
+     * 输入：
+     * <p>
+     * 4
+     * /   \
+     * 2     7
+     * / \   / \
+     * 1   3 6   9
+     * 输出：
+     * <p>
+     * 4
+     * /   \
+     * 7     2
+     * / \   / \
+     * 9   6 3   1
+     * <p>
+     * 链接：https://leetcode-cn.com/problems/invert-binary-tree
+     */
+
+    public static void main(String[] args) {
+
+        FlippedBinaryTree226 flippedBinaryTree226 = new FlippedBinaryTree226();
+        TreeNode root = flippedBinaryTree226.init();
+        TreeNode treeNode = flippedBinaryTree226.invertTree(root);
+        // 断点或者遍历打印
+    }
+
+    private TreeNode init() {
+
+        //     4
+        //   /   \
+        //  2     7
+        // / \   / \
+        //1   3 6   9
+        TreeNode node1 = new TreeNode(1);
+        TreeNode node3 = new TreeNode(3);
+        TreeNode node2 = new TreeNode(2, node1, node3);
+        TreeNode node6 = new TreeNode(6);
+        TreeNode node9 = new TreeNode(9);
+        TreeNode node7 = new TreeNode(7, node6, node9);
+
+        return new TreeNode(4, node2, node7);
+    }
+
+    public TreeNode invertTree(TreeNode root) {
+
+        if (root != null) {
+            TreeNode temp = null;
+
+            if (root.left != null) {
+                invertTree(root.left);
+            }
+            if (root.right != null) {
+                invertTree(root.right);
+            }
+
+            temp = root.left;
+            root.left = root.right;
+            root.right = temp;
+        }
+        return root;
+    }
+
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+}
