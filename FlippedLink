@@ -1,0 +1,114 @@
+package com.striner.java.test;
+
+public class FlippedLink206 {
+
+    /**
+     * 反转一个单链表。
+     * <p>
+     * 示例:
+     * <p>
+     * 输入: 1->2->3->4->5->NULL
+     * 输出: 5->4->3->2->1->NULL
+     * 进阶:
+     * 你可以迭代或递归地反转链表。你能否用两种方法解决这道题？
+     * <p>
+     * 链接：https://leetcode-cn.com/problems/reverse-linked-list
+     */
+
+    public static void main(String[] args) {
+
+        // init
+        ListNode head1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, null)))));
+        ListNode head2 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, null)))));
+        FlippedLink206 flippedLink206 = new FlippedLink206();
+        ListNode listNode1 = flippedLink206.reverseList1(head1);
+        System.out.println("listNode1 --- ");
+        while (listNode1 != null) {
+            System.out.print(listNode1.val + " ");
+            listNode1 = listNode1.next;
+        }
+        System.out.println();
+
+
+        ListNode listNode2 = flippedLink206.reverseList2(head2);
+        System.out.println("listNode2 --- ");
+        while (listNode2 != null) {
+            System.out.print(listNode2.val + " ");
+            listNode2 = listNode2.next;
+        }
+    }
+
+    // 方法1： 递归
+    public ListNode reverseList1(ListNode head) {
+
+        ListNode pre = null;
+
+        if (head != null) {
+            pre = extracted(pre, head);
+        }
+        return pre;
+        
+        // 状态：通过
+        // 执行用时: 0 ms
+        // 内存消耗: 38.2 MB
+    }
+
+    private ListNode extracted(ListNode preNode, ListNode curNode) {
+        if (curNode != null) {
+            ListNode nextNode = curNode.next;
+            curNode.next = preNode;
+            preNode = curNode;
+
+            curNode = nextNode;
+
+            return extracted(preNode, curNode);
+        }
+        return preNode;
+    }
+
+
+    // 方法2： 迭代
+    public ListNode reverseList2(ListNode head) {
+
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode pre = null;
+
+        while (head != null) {
+
+            ListNode temp = head.next;
+
+            head.next = pre;
+            pre = head;
+
+            head = temp;
+        }
+
+        return pre;
+
+        // 状态：通过
+        // 执行用时: 0 ms
+        // 内存消耗: 37.9 MB
+    }
+
+
+}
+
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+}
