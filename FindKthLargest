@@ -1,0 +1,80 @@
+import java.util.Arrays;
+
+public class FindKthLargest215 {
+
+    /**
+     * 215. 数组中的第K个最大元素
+     * 在未排序的数组中找到第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
+     * <p>
+     * 示例 1:
+     * <p>
+     * 输入: [3,2,1,5,6,4] 和 k = 2
+     * 输出: 5
+     * 示例 2:
+     * <p>
+     * 输入: [3,2,3,1,2,4,5,5,6] 和 k = 4
+     * 输出: 4
+     * 说明:
+     * <p>
+     * 你可以假设 k 总是有效的，且 1 ≤ k ≤ 数组的长度。
+     * 链接：https://leetcode-cn.com/problems/kth-largest-element-in-an-array/
+     */
+
+    public static void main(String[] args) {
+        int[] nums = new int[]{3,2,3,1,2,4,5,5,6};
+        int k = 4;
+        FindKthLargest215 findKthLargest215 = new FindKthLargest215();
+        System.out.println(findKthLargest215.findKthLargest1(nums, k));
+        System.out.println(findKthLargest215.findKthLargest2(nums, k));
+    }
+
+    // 方法1
+    public int findKthLargest1(int[] nums, int k) {
+
+        Arrays.sort(nums);
+        return nums[nums.length - k];
+    }
+
+    // 方法2
+    public int findKthLargest2(int[] nums, int k) {
+
+        int start = 0;
+        int end = nums.length - 1;
+
+        return findKthLargest(start, end, nums, k - 1);
+    }
+
+    public int findKthLargest(int start, int end, int[] nums, int k) {
+
+        int cur = nums[start];
+        int j = start;
+
+
+        if (start == end) {
+            return cur;
+        }
+
+        for (int i = start + 1; i <= end; i++) {
+            if (nums[i] > cur) {
+                j++;
+                swap(i, j, nums);
+                swap(j, j - 1, nums);
+
+            }
+        }
+
+        if (j == k) {
+            return nums[j];
+        } else if (j < k) {
+            return findKthLargest(j + 1, end, nums, k);
+        } else {
+            return findKthLargest(start, j - 1, nums, k);
+        }
+    }
+
+    public void swap(int index1, int index2, int[] nums) {
+        int temp = nums[index1];
+        nums[index1] = nums[index2];
+        nums[index2] = temp;
+    }
+}
