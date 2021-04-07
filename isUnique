@@ -1,0 +1,50 @@
+package com.striner.java.test;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class IsUnique01_01 {
+
+    //实现一个算法，确定一个字符串 s 的所有字符是否全都不同。
+    //
+    //示例 1：
+    //
+    //输入: s = "leetcode"
+    //输出: false
+    //示例 2：
+    //
+    //输入: s = "abc"
+    //输出: true
+    //限制：
+    //
+    //0 <= len(s) <= 100
+    //如果你不使用额外的数据结构，会很加分。
+    //
+    //来源：力扣（LeetCode）
+    //链接：https://leetcode-cn.com/problems/is-unique-lcci
+
+    public static void main(String[] args) {
+
+        String s = "abc";
+        IsUnique01_01 isUnique01_01 = new IsUnique01_01();
+        System.out.println(isUnique01_01.isUnique(s));
+    }
+
+
+    public boolean isUnique(String astr) {
+
+        byte[] bytes = astr.getBytes();
+        Set<Byte> set = new HashSet<>();
+        for (byte b : bytes) {
+            if(set.contains(b)) {
+                return false;
+            }
+            set.add(b);
+        }
+
+        return true;
+    }
+
+    //执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
+    //内存消耗： 36.2 MB , 在所有 Java 提交中击败了 39.22% 的用户
+}
