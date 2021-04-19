@@ -1,0 +1,91 @@
+package com.striner.java.test01;
+
+import java.util.Arrays;
+
+public class SortArray912 {
+
+    // 912. 排序数组
+    //给你一个整数数组 nums，请你将该数组升序排列。
+    //
+    //示例 1：
+    //输入：nums = [5,2,3,1]
+    //输出：[1,2,3,5]
+    //
+    //示例 2：
+    //输入：nums = [5,1,1,2,0,0]
+    //输出：[0,0,1,1,2,5]
+    //
+    //提示：
+    //1 <= nums.length <= 50000
+ 
+    public static void main(String[] args) {
+
+        int[] nums = new int[]{5, 2, 3, 1};
+        SortArray912 test = new SortArray912();
+        System.out.println(Arrays.toString(test.sortArray(nums)));
+    }
+
+    public int[] sortArray(int[] nums) {
+
+        if (nums.length < 2) {
+            return nums;
+        }
+
+        sortArray(nums, 0, nums.length - 1);
+        return nums;
+    }
+
+    public void sortArray(int[] nums, int startIndex, int endIndex) {
+
+        if (endIndex <= startIndex) {
+            return;
+        }
+
+        // 哨兵
+        int indexNum = nums[startIndex];
+
+        int leftIndex = startIndex + 1;
+        int rightIndex = endIndex;
+
+        while(leftIndex < rightIndex) {
+
+            while(leftIndex < rightIndex && nums[leftIndex] < indexNum) {
+                leftIndex++;
+            }
+
+            while(leftIndex < rightIndex && nums[rightIndex] > indexNum) {
+                rightIndex--;
+            }
+
+            if(leftIndex < rightIndex) {
+
+                // swap nums[leftIndex] nums[rightIndex]
+                int temp = nums[leftIndex];
+                nums[leftIndex] = nums[rightIndex];
+                nums[rightIndex] = temp;
+
+                // quick
+                leftIndex++;
+                rightIndex--;
+            }
+        }
+
+        // check
+        if (leftIndex == rightIndex && nums[rightIndex] > indexNum) {
+            rightIndex--;
+        }
+
+        // swap nums[rightIndex] indexNum
+        int temp = nums[rightIndex];
+        nums[rightIndex] = nums[startIndex];
+        nums[startIndex] = temp;
+
+        // startIndex - rightIndex-1
+        sortArray(nums, startIndex, rightIndex-1);
+
+        // rightIndex+1 - endIndex
+        sortArray(nums, rightIndex+1, endIndex);
+    }
+}
+
+
