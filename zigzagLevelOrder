@@ -1,0 +1,124 @@
+package com.striner.java.test;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
+public class ZigzagLevelOrder103 {
+
+    //103. 二叉树的锯齿形层序遍历
+    //给定一个二叉树，返回其节点值的锯齿形层序遍历。（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。
+    //
+    //例如：
+    //给定二叉树 [3,9,20,null,null,15,7],
+    //
+    //    3
+    //   / \
+    //  9  20
+    //    /  \
+    //   15   7
+    //返回锯齿形层序遍历如下：
+    //
+    //[
+    //  [3],
+    //  [20,9],
+    //  [15,7]
+    //]
+    public static void main(String[] args) {
+
+//        TreeNode103 root = new TreeNode103(3, new TreeNode103(9), new TreeNode103(20, new TreeNode103(15), new TreeNode103(7)));
+        //[1,2,null,3,null,4,null,5] [[1],[2],[3],[4],[5]]
+        TreeNode103 root = new TreeNode103(1, new TreeNode103(2, new TreeNode103(3, new TreeNode103(4, new TreeNode103(5), null), null), null), null);
+        ZigzagLevelOrder103 zigzagLevelOrder = new ZigzagLevelOrder103();
+        List<List<Integer>> lists = zigzagLevelOrder.zigzagLevelOrder(root);
+        System.out.println(lists);
+    }
+
+    public List<List<Integer>> zigzagLevelOrder(TreeNode103 root) {
+
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null) return result;
+
+        List<Integer> list = new ArrayList<>();
+        list.add(root.val);
+        result.add(list);
+
+        if (root.left == null && root.right == null) return result;
+
+        boolean rev = true;
+        Stack<TreeNode103> nodeStack = new Stack<>();
+
+        nodeStack.push(root);
+
+        while (!nodeStack.empty()) {
+
+            if (rev) { // 倒序 右 -> 左
+                List<Integer> nodeList = new ArrayList<>();
+                Stack<TreeNode103> tempStack = new Stack<>();
+
+                while (!nodeStack.empty()) {
+                    TreeNode103 head = nodeStack.pop();
+                    if (head.right != null) {
+                        nodeList.add(head.right.val);
+                        tempStack.push(head.right);
+                    }
+                    if (head.left != null) {
+                        nodeList.add(head.left.val);
+                        tempStack.push(head.left);
+                    }
+                }
+                if (nodeList.size() != 0) result.add(nodeList);
+                if (tempStack.empty()) return result;
+                nodeStack = tempStack;
+
+            } else {  // 顺序 左 -> 右
+
+                List<Integer> nodeList = new ArrayList<>();
+                Stack<TreeNode103> tempStack = new Stack<>();
+                while (!nodeStack.empty()) {
+                    TreeNode103 head = nodeStack.pop();
+                    if (head.left != null) {
+                        nodeList.add(head.left.val);
+                        tempStack.push(head.left);
+                    }
+                    if (head.right != null) {
+                        nodeList.add(head.right.val);
+                        tempStack.push(head.right);
+                    }
+                }
+                if (nodeList.size() != 0) result.add(nodeList);
+                if (tempStack.empty()) return result;
+                nodeStack = tempStack;
+            }
+
+            rev = !rev;
+        }
+
+
+        return result;
+    }
+}
+
+class TreeNode103 {
+    int val;
+    TreeNode103 left;
+    TreeNode103 right;
+
+    TreeNode103() {
+    }
+
+    TreeNode103(int val) {
+        this.val = val;
+    }
+
+    TreeNode103(int val, TreeNode103 left, TreeNode103 right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
+
+//执行结果： 通过
+//显示详情
+//执行用时： 1 ms , 在所有 Java 提交中击败了 98.67% 的用户
+//内存消耗： 38.6 MB , 在所有 Java 提交中击败了 45.02% 的用户
