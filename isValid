@@ -1,0 +1,81 @@
+package com.striner.java.test03;
+
+import java.util.LinkedList;
+
+public class IsValid20 {
+
+    //20. 有效的括号
+    //给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
+    //
+    //有效字符串需满足：
+    //左括号必须用相同类型的右括号闭合。
+    //左括号必须以正确的顺序闭合。
+    //
+    //示例 1：
+    //输入：s = "()"
+    //输出：true
+    //
+    //示例 2：
+    //输入：s = "()[]{}"
+    //输出：true
+    //
+    //示例 3：
+    //输入：s = "(]"
+    //输出：false
+    //
+    //示例 4：
+    //输入：s = "([)]"
+    //输出：false
+    //
+    //示例 5：
+    //输入：s = "{[]}"
+    //输出：true
+    //
+    //提示：
+    //1 <= s.length <= 104
+    //s 仅由括号 '()[]{}' 组成
+    //https://leetcode-cn.com/problems/valid-parentheses/
+    public static void main(String[] args) {
+
+        String s = "([)]";
+        IsValid20 isValid = new IsValid20();
+        System.out.println(isValid.isValid(s));
+    }
+
+    public boolean isValid(String s) {
+
+        LinkedList<Character> linkedList = new LinkedList<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            switch (c) {
+                case '(':
+                    linkedList.addLast('(');
+                    break;
+                case ')':
+                    if (linkedList.size() <= 0 || linkedList.getLast() != '(') return false;
+                    linkedList.removeLast();
+                    break;
+                case '[':
+                    linkedList.addLast('[');
+                    break;
+                case ']':
+                    if (linkedList.size() <= 0 || linkedList.getLast() != '[') return false;
+                    linkedList.removeLast();
+                    break;
+                case '{':
+                    linkedList.addLast('{');
+                    break;
+                case '}':
+                    if (linkedList.size() <= 0 || linkedList.getLast() != '{') return false;
+                    linkedList.removeLast();
+                    break;
+            }
+        }
+
+        return linkedList.size() == 0;
+    }
+}
+//执行结果： 通过
+//执行用时： 1 ms , 在所有 Java 提交中击败了 99.20% 的用户
+//内存消耗： 36.6 MB , 在所有 Java 提交中击败了 48.72% 的用户
