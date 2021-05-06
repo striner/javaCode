@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class SortArray912 {
 
+
     // 912. 排序数组
     //给你一个整数数组 nums，请你将该数组升序排列。
     //
@@ -17,6 +18,9 @@ public class SortArray912 {
     //
     //提示：
     //1 <= nums.length <= 50000
+    //-50000 <= nums[i] <= 50000
+    //
+    //https://leetcode-cn.com/problems/sort-an-array/
  
     public static void main(String[] args) {
 
