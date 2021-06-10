@@ -1,0 +1,79 @@
+package com.striner.java.test01;
+
+public class LowestCommonAncestor236 {
+
+    /**
+     * 236. 二叉树的最近公共祖先
+     * https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/
+     *
+     * @param args
+     */
+    public static void main(String[] args) throws Exception {
+
+        // root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
+//        TreeNode236 root = new TreeNode236(3);
+//        TreeNode236 node1 = new TreeNode236(5);
+//        TreeNode236 node2 = new TreeNode236(1);
+//        TreeNode236 node3 = new TreeNode236(6);
+//        TreeNode236 node4 = new TreeNode236(2);
+//        TreeNode236 node5 = new TreeNode236(0);
+//        TreeNode236 node6 = new TreeNode236(8);
+//        TreeNode236 node7 = new TreeNode236(7);
+//        TreeNode236 node8 = new TreeNode236(4);
+//        root.left = node1;
+//        root.right = node2;
+//        node1.left = node3;
+//        node1.right = node4;
+//        node2.left = node5;
+//        node2.right = node6;
+//        node4.left = node7;
+//        node4.right = node8;
+
+        //[-1,0,3,-2,4,null,null,8] 8 4
+        TreeNode236 root = new TreeNode236(-1);
+        TreeNode236 node1 = new TreeNode236(0);
+        TreeNode236 node2 = new TreeNode236(3);
+        TreeNode236 node3 = new TreeNode236(-2);
+        TreeNode236 node4 = new TreeNode236(4);
+        TreeNode236 node5 = new TreeNode236(8);
+        root.left = node1;
+        root.right = node2;
+        node1.left = node3;
+        node1.right = node4;
+        node3.left = node5;
+
+        LowestCommonAncestor236 lowestCommonAncestor = new LowestCommonAncestor236();
+        System.out.println(lowestCommonAncestor.lowestCommonAncestor(root, node5, node4).val);
+    }
+
+    public TreeNode236 lowestCommonAncestor(TreeNode236 root, TreeNode236 p, TreeNode236 q){
+
+        if (root == null || root == p || root == q) return root;
+
+        TreeNode236 left = lowestCommonAncestor(root.left, p, q);
+        TreeNode236 right = lowestCommonAncestor(root.right, p, q);
+
+        if (left != null && right != null) return root;
+        if (left != null) return left;
+        if (right != null) return right;
+        return null;
+
+    }
+}
+
+
+class TreeNode236 {
+    int val;
+    TreeNode236 left;
+    TreeNode236 right;
+
+    TreeNode236(int x) {
+        val = x;
+    }
+}
+
+//执行结果： 通过
+//显示详情
+//
+//执行用时： 7 ms , 在所有 Java 提交中击败了 99.91% 的用户
+//内存消耗： 40.6 MB , 在所有 Java 提交中击败了 57.34% 的用户
