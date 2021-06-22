@@ -1,0 +1,58 @@
+package com.striner.java.test01;
+
+public class Search704 {
+
+    // 704. 二分查找
+    //给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
+    //
+    //
+    //示例 1:
+    //
+    //输入: nums = [-1,0,3,5,9,12], target = 9
+    //输出: 4
+    //解释: 9 出现在 nums 中并且下标为 4
+    //示例 2:
+    //
+    //输入: nums = [-1,0,3,5,9,12], target = 2
+    //输出: -1
+    //解释: 2 不存在 nums 中因此返回 -1
+    //
+    //
+    //提示：
+    //
+    //你可以假设 nums 中的所有元素是不重复的。
+    //n 将在 [1, 10000]之间。
+    //nums 的每个元素都将在 [-9999, 9999]之间。
+    //https://leetcode-cn.com/problems/binary-search/
+    public static void main(String[] args) {
+        //[2,5]
+        //0
+        int[] nums = new int[]{2, 5};
+        int target = 5;
+        Search704 search = new Search704();
+        System.out.println(search.search(nums, target));
+    }
+
+    public int search(int[] nums, int target) {
+
+        if (nums.length == 0) return -1;
+        if (nums.length == 1) return nums[0] == target ? 0 : -1;
+        return search(nums, target, 0, nums.length - 1);
+    }
+
+    public int search(int[] nums, int target, int start, int end) {
+        int index = (end + start) / 2;
+        if (nums[index] == target) return index;
+        if (start == end) return -1;
+        if (nums[index] < target) {
+            return index == end ? -1 : search(nums, target, index + 1, end);
+        }
+        if (nums[index] > target) {
+            return index == start ? -1 : search(nums, target, start, index - 1);
+        }
+        return -1;
+    }
+}
+//执行结果： 通过
+//执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
+//内存消耗： 39.2 MB , 在所有 Java 提交中击败了 82.82% 的用户
