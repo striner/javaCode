@@ -1,0 +1,82 @@
+package com.striner.java.leetcode.test01;
+
+public class NumIslands200 {
+
+    //200. 岛屿数量
+    //给你一个由 '1'（陆地）和 '0'（水）组成的的二维网格，请你计算网格中岛屿的数量。
+    //
+    //岛屿总是被水包围，并且每座岛屿只能由水平方向和/或竖直方向上相邻的陆地连接形成。
+    //
+    //此外，你可以假设该网格的四条边均被水包围。
+    //
+    //
+    //
+    //示例 1：
+    //
+    //输入：grid = [
+    //  ["1","1","1","1","0"],
+    //  ["1","1","0","1","0"],
+    //  ["1","1","0","0","0"],
+    //  ["0","0","0","0","0"]
+    //]
+    //输出：1
+    //示例 2：
+    //
+    //输入：grid = [
+    //  ["1","1","0","0","0"],
+    //  ["1","1","0","0","0"],
+    //  ["0","0","1","0","0"],
+    //  ["0","0","0","1","1"]
+    //]
+    //输出：3
+    //
+    //
+    //提示：
+    //
+    //m == grid.length
+    //n == grid[i].length
+    //1 <= m, n <= 300
+    //grid[i][j] 的值为 '0' 或 '1'
+    //https://leetcode-cn.com/problems/number-of-islands/
+    public static void main(String[] args) {
+
+        // [["1","1","1"],["0","1","0"],["1","1","1"]]
+        char[][] grid = new char[][]{{'1','1','1'}, {'0','1','0'}, {'1','1','1'}};
+        NumIslands200 numIslands = new NumIslands200();
+        System.out.println(numIslands.numIslands(grid));
+    }
+
+    public int numIslands(char[][] grid) {
+        if (grid.length == 0 || grid[0].length == 0) return 0;
+
+        int r = grid[0].length - 1;
+        int b = grid.length - 1;
+
+        int sum = 0;
+        for (int i = 0; i <= r; i++) {
+            for (int j = 0; j <= b; j++) {
+                if (grid[j][i] == '1') {
+                    numIslands(grid, i, j, r, b);
+                    sum += 1;
+                }
+            }
+        }
+
+        return sum;
+    }
+
+    public void numIslands(char[][] grid, int i, int j, int r, int b) {
+
+        if (grid[j][i] == '1') {
+            grid[j][i] = '0';
+            if (i < r) numIslands(grid, i + 1, j, r, b);
+            if (j < b) numIslands(grid, i, j + 1, r, b);
+            if (i > 0) numIslands(grid, i - 1, j, r, b);
+            if (j > 0) numIslands(grid, i, j - 1, r, b);
+        }
+    }
+}
+//执行结果： 通过
+//
+//执行用时： 1 ms , 在所有 Java 提交中击败了 100.00% 的用户
+//内存消耗： 41 MB , 在所有 Java 提交中击败了 22.65% 的用户
