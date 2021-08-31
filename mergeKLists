@@ -65,7 +65,7 @@ public class MergeKLists23 {
         ListNode23 root = new ListNode23();
         ListNode23 cur = root;
 
-        // 使用队列存储每组的第一个节点，且升序排列
+        // 使用优先队列存储每组的第一个节点
         PriorityQueue<ListNode23> queue = new PriorityQueue<>(Comparator.comparingInt(o -> o.val));
 
         for (ListNode23 list : lists) {
@@ -82,7 +82,7 @@ public class MergeKLists23 {
             ListNode23 minTemp = queue.poll();
             ListNode23 minNext = minTemp.next;
             if(minNext != null) queue.add(minNext);
-            
+
             // 取出的最小节点挂到root上，并断掉最小节点后续的串
             cur.next = minTemp;
             cur = minTemp;
