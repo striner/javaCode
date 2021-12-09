@@ -1,0 +1,53 @@
+
+面试题 02.02. 返回倒数第 k 个节点
+实现一种算法，找出单向链表中倒数第 k 个节点。返回该节点的值。
+
+注意：本题相对原题稍作改动
+
+示例：
+
+输入： 1->2->3->4->5 和 k = 2
+输出： 4
+说明：
+
+给定的 k 保证是有效的。
+https://leetcode-cn.com/problems/kth-node-from-end-of-list-lcci/
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+
+    // 解题思路：快慢指针
+    public int kthToLast(ListNode head, int k) {
+     
+        ListNode index = head;
+
+        while(index != null && k > 1) {
+            index = index.next;
+            k--;
+        }
+
+        if(k == 0) return index.val;
+
+        ListNode index2 = head; // 慢指针
+
+        while(index.next != null) {
+            index = index.next;
+            index2 = index2.next;
+        }
+
+        return index2.val;
+    }
+}
+
+执行结果： 通过
+
+执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
+内存消耗： 35.4 MB , 在所有 Java 提交中击败了 99.90% 的用户
+通过测试用例： 208 / 208
