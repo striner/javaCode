@@ -1,0 +1,74 @@
+package com.striner.java.jzOffer;
+
+import java.util.Arrays;
+
+public class ReversePrint06 {
+
+    //剑指 Offer 06. 从尾到头打印链表
+    //输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
+    //
+    //
+    //
+    //示例 1：
+    //
+    //输入：head = [1,3,2]
+    //输出：[2,3,1]
+    //
+    //
+    //限制：
+    //
+    //0 <= 链表长度 <= 10000
+    //https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/
+    public static void main(String[] args) {
+//        ListNode06 node = new ListNode06(1);
+//        ListNode06 node1 = new ListNode06(3);
+//        ListNode06 node2 = new ListNode06(2);
+//        node.next = node1;
+//        node1.next = node2;
+        ReversePrint06 reversePrint06 = new ReversePrint06();
+        System.out.println(Arrays.toString(reversePrint06.reversePrint(null)));
+    }
+
+    public int[] reversePrint(ListNode06 head) {
+
+        if(head == null) {
+            return new int[0];
+        }
+
+        int num = 0;
+
+        // 反转
+        ListNode06 pre = null;
+        ListNode06 next = head.next;
+        do {
+            head.next = pre;
+            pre = head;
+            if(next == null) {
+                head = null;
+            } else {
+                head = next;
+                next = next.next;
+            }
+            num++;
+        } while (head != null);
+
+        // 通过数组打印
+        int[] array = new int[num];
+        int i = 0;
+        while(i < num) {
+            array[i++] = pre.val;
+            pre = pre.next;
+        }
+
+        return array;
+    }
+}
+
+class ListNode06 {
+    int val;
+    ListNode06 next;
+    ListNode06(int x) { val = x; }
+}
+//执行结果： 通过
+//执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
+//内存消耗： 38.6 MB , 在所有 Java 提交中击败了 90.74% 的用户
