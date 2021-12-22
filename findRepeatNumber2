@@ -1,0 +1,58 @@
+//https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/
+剑指 Offer 03. 数组中重复的数字
+找出数组中重复的数字。
+
+在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。
+
+示例 1：
+
+输入：
+[2, 3, 1, 0, 2, 5, 3]
+输出：2 或 3 
+
+限制：
+2 <= n <= 100000
+
+解法1：bitset
+class Solution {
+    public int findRepeatNumber(int[] nums) {
+
+        int len = nums.length;
+        BitSet bitset = new BitSet(len);
+        
+        for(int i = 0; i < len; i++) {
+            int cur = nums[i];
+            if(bitset.get(cur)) {
+                return cur;
+            }
+            bitset.set(cur);
+        }
+        return -1;
+    }
+}
+执行结果： 通过
+执行用时： 3 ms , 在所有 Java 提交中击败了 57.03% 的用户
+内存消耗： 46.4 MB , 在所有 Java 提交中击败了 50.63% 的用户
+
+解法2：set
+class Solution {
+    public int findRepeatNumber(int[] nums) {
+
+        int len = nums.length;
+        Set<Integer> set = new HashSet<>(len);
+        
+        for(int i = 0; i < len; i++) {
+            int cur = nums[i];
+            if(!set.add(cur)) {
+                return cur;
+            }
+        }
+        return -1; 
+    }
+}
+执行结果： 通过
+执行用时： 4 ms , 在所有 Java 提交中击败了 54.25% 的用户
+内存消耗： 48.7 MB , 在所有 Java 提交中击败了 5.03% 的用户
+
+解法3：原地交换
+由于长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内，所以数组的索引与值是一对多的关系。
